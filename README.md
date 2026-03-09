@@ -69,7 +69,11 @@ npm run dev
 OPENAI_API_KEY=
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
+DEMO_LOCKDOWN=on
 ```
+
+- `DEMO_LOCKDOWN=on` 时，全站访客会被重定向到关闭页。
+- 需要重新开放时，把 `DEMO_LOCKDOWN` 改成 `off` 并重新部署。
 
 ## AI Fallback
 
