@@ -5,10 +5,11 @@ type Variant = "default" | "outline" | "ghost";
 type Size = "default" | "sm" | "lg";
 
 const variantClasses: Record<Variant, string> = {
-  default: "bg-slate-950 text-white hover:bg-slate-800",
+  default:
+    "bg-[linear-gradient(135deg,#7C3AED,#00C2FF)] text-white hover:scale-[1.02]",
   outline:
-    "border border-slate-300 bg-white text-slate-700 hover:border-sky-300 hover:text-sky-700",
-  ghost: "bg-transparent text-slate-600 hover:bg-sky-50 hover:text-sky-700",
+    "border border-white/14 bg-white/6 text-white hover:bg-white/10",
+  ghost: "bg-transparent text-white/70 hover:bg-white/8 hover:text-white",
 };
 
 const sizeClasses: Record<Size, string> = {

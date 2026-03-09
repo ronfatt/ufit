@@ -16,9 +16,8 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "UFIT AI Wellness Membership Demo",
-  description:
-    "A modern AI wellness, membership, and referral commerce demo for UFIT.",
+  title: "UFIT AI 健康会员 Demo",
+  description: "年轻化 AI 健康会员与推荐裂变平台演示站。",
 };
 
 export default function RootLayout({
@@ -27,12 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-CN">
       <body
         className={`${jakarta.variable} ${fraunces.variable} min-h-screen antialiased`}
       >
-        <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(178,202,255,0.45),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(255,255,255,0.9),_transparent_25%),linear-gradient(180deg,_#f8fbff_0%,_#eef4fb_55%,_#f6f8fb_100%)]">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/70" />
+        <div className="relative min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#0b1020_0%,_#11162b_36%,_#0d1224_100%)]">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/12" />
+          <div className="pointer-events-none absolute left-[-8rem] top-24 h-72 w-72 rounded-full bg-[#7C3AED]/30 blur-[120px]" />
+          <div className="pointer-events-none absolute right-[-8rem] top-10 h-80 w-80 rounded-full bg-[#00C2FF]/20 blur-[120px]" />
+          <div className="pointer-events-none absolute bottom-16 left-1/3 h-80 w-80 rounded-full bg-[#FF4FD8]/12 blur-[140px]" />
           <SiteHeader />
           <main className="relative z-10">{children}</main>
           <SiteFooter />

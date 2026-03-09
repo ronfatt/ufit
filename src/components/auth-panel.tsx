@@ -9,7 +9,7 @@ export function AuthPanel() {
   const [mode, setMode] = useState<"login" | "register">("login");
 
   return (
-    <div className="rounded-[2rem] border border-white/70 bg-white/85 p-8 shadow-[0_24px_70px_rgba(41,75,119,0.10)] backdrop-blur xl:p-10">
+    <div className="glass-card rounded-[2rem] p-8 xl:p-10">
       <TabsList>
         {(["login", "register"] as const).map((item) => {
           const active = item === mode;
@@ -19,7 +19,7 @@ export function AuthPanel() {
               onClick={() => setMode(item)}
               active={active}
             >
-              {item === "login" ? "Login" : "Register"}
+              {item === "login" ? "登录" : "注册"}
             </TabsTrigger>
           );
         })}
@@ -28,8 +28,8 @@ export function AuthPanel() {
       <form className="mt-8 space-y-4">
         {mode === "register" && (
           <label className="block">
-            <span className="mb-2 block text-sm font-medium text-slate-700">
-              Full Name
+            <span className="mb-2 block text-sm font-medium text-white/72">
+              姓名
             </span>
             <Input
               type="text"
@@ -38,8 +38,8 @@ export function AuthPanel() {
           </label>
         )}
         <label className="block">
-          <span className="mb-2 block text-sm font-medium text-slate-700">
-            Email
+          <span className="mb-2 block text-sm font-medium text-white/72">
+            邮箱
           </span>
           <Input
             type="email"
@@ -47,8 +47,8 @@ export function AuthPanel() {
           />
         </label>
         <label className="block">
-          <span className="mb-2 block text-sm font-medium text-slate-700">
-            Password
+          <span className="mb-2 block text-sm font-medium text-white/72">
+            密码
           </span>
           <Input
             type="password"
@@ -57,12 +57,12 @@ export function AuthPanel() {
         </label>
         {mode === "register" && (
           <label className="block">
-            <span className="mb-2 block text-sm font-medium text-slate-700">
-              Referral Code
+            <span className="mb-2 block text-sm font-medium text-white/72">
+              推荐码
             </span>
             <Input
               type="text"
-              placeholder="Optional"
+              placeholder="选填"
             />
           </label>
         )}
@@ -70,12 +70,12 @@ export function AuthPanel() {
           type="button"
           className="w-full"
         >
-          {mode === "login" ? "Continue to Dashboard" : "Create Membership Account"}
+          {mode === "login" ? "进入仪表盘" : "创建会员账号"}
         </Button>
       </form>
 
-      <div className="mt-6 rounded-[1.5rem] border border-sky-100 bg-sky-50 p-5 text-sm leading-6 text-sky-900">
-        Join the AI-powered wellness membership experience.
+      <div className="mt-6 rounded-[1.5rem] border border-white/10 bg-white/6 p-5 text-sm leading-6 text-white/72">
+        进入 UFIT AI 的健康会员体验。当前支持演示模式，后续可直接接入真实认证。
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AiChatDemo } from "@/components/ai-chat-demo";
+import { AIToolsShowcase } from "@/components/ai-tools/ai-tools-showcase";
 import { FeatureCard } from "@/components/feature-card";
 import { ProductCard } from "@/components/product-card";
 import { SectionHeading } from "@/components/section-heading";
@@ -14,108 +15,142 @@ import {
 export default function Home() {
   return (
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-24 px-6 pb-24 pt-10 sm:px-8 lg:px-10">
-      <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="rounded-[2rem] border border-white/60 bg-white/75 p-8 shadow-[0_30px_80px_rgba(32,53,92,0.12)] backdrop-blur xl:p-12">
-          <div className="inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
-            AI Wellness + Membership + Referral Commerce
+      <section className="section-reveal relative grid gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
+        <div className="relative">
+          <div className="mb-6 inline-flex rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
+            AI WELLNESS + MEMBERSHIP + REFERRAL
           </div>
-          <h1 className="mt-6 max-w-2xl font-serif text-5xl leading-[1.02] font-semibold tracking-tight text-slate-950 sm:text-6xl">
-            Your AI Wellness Coach
+          <h1 className="max-w-3xl font-sans text-[3.8rem] leading-[0.88] font-black tracking-[-0.06em] text-white sm:text-[4.7rem] lg:text-[5.5rem]">
+            <span className="bg-[linear-gradient(135deg,#F8FAFC_0%,#B8C2FF_18%,#00C2FF_46%,#FF4FD8_72%,#B7FF3C_100%)] bg-clip-text text-transparent">
+              Talk to AI.
+            </span>
+            <br />
+            <span className="text-white">状态更亮。</span>
+            <br />
+            <span className="text-white/88">增长更聪明。</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-            Improve your health, discover the right wellness products, and grow
-            your membership network with AI.
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70">
+            这不是传统会员后台。UFIT AI 把健康建议、产品推荐、会员权益和推荐增长，做成一个年轻、上头、好懂的 AI lifestyle platform。
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/ai-coach"
-              className="inline-flex items-center justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="pulse-glow inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#7C3AED,#00C2FF)] px-7 py-3.5 text-sm font-semibold text-white transition hover:scale-[1.02]"
             >
-              Try AI Coach
+              先聊 AI 教练
             </Link>
             <Link
               href="/login"
-              className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700"
+              className="inline-flex items-center justify-center rounded-full border border-white/16 bg-white/6 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              Join Membership
+              加入会员体验
             </Link>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {referralPreview.map((item) => (
+            {[
+              { label: "AI 回答", value: "9.2k" },
+              { label: "推荐激活", value: "386" },
+              { label: "会员增速", value: "+31%" },
+            ].map((item, index) => (
               <div
                 key={item.label}
-                className="rounded-3xl border border-slate-200/80 bg-slate-50/80 p-4"
+                className={`glass-card rounded-[28px] p-5 transition hover:scale-[1.02] ${
+                  index === 0
+                    ? "shadow-[0_0_60px_rgba(0,194,255,0.12)]"
+                    : index === 1
+                      ? "shadow-[0_0_60px_rgba(124,58,237,0.14)]"
+                      : "shadow-[0_0_60px_rgba(183,255,60,0.12)]"
+                }`}
               >
-                <div className="text-2xl font-semibold text-slate-950">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
+                  {item.label}
+                </div>
+                <div className="mt-3 text-4xl font-black tracking-[-0.05em] text-white">
                   {item.value}
                 </div>
-                <div className="mt-1 text-sm text-slate-500">{item.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid gap-4">
-          <div className="rounded-[2rem] border border-sky-100 bg-[linear-gradient(160deg,_rgba(8,145,178,0.10),_rgba(255,255,255,0.92)_42%,_rgba(191,219,254,0.45)_100%)] p-6 shadow-[0_18px_50px_rgba(42,78,137,0.12)]">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Wellness Snapshot
-            </div>
-            <div className="mt-5 text-4xl font-semibold text-slate-950">
-              86 / 100
-            </div>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              AI health score based on sleep, recovery, posture strain, and
-              energy rhythm.
-            </p>
+        <div className="relative min-h-[560px]">
+          <div className="absolute left-8 top-10 h-44 w-44 rounded-full bg-[#7C3AED]/35 blur-[90px]" />
+          <div className="absolute right-8 top-20 h-40 w-40 rounded-full bg-[#00C2FF]/26 blur-[90px]" />
+          <div className="absolute bottom-20 left-1/3 h-36 w-36 rounded-full bg-[#FF4FD8]/20 blur-[90px]" />
+
+          <div className="float-card absolute left-2 top-6 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B7FF3C]">
+            AI MATCH
+          </div>
+          <div className="float-card-delay absolute right-0 top-16 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF4FD8]">
+            GLOW MODE
+          </div>
+          <div className="float-card-slow absolute left-10 top-28 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#00C2FF]">
+            MEMBER PERKS
           </div>
 
-          <div className="rounded-[2rem] border border-slate-200/70 bg-slate-950 p-6 text-white shadow-[0_18px_50px_rgba(15,23,42,0.18)]">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">
-              Member Flow
+          <div className="glass-card glow-border float-card absolute right-10 top-24 w-[72%] rounded-[32px] p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
+              UFIT AI CHAT
             </div>
-            <div className="mt-5 grid gap-3">
-              {[
-                "Ask AI about fatigue, sleep, or back discomfort",
-                "Get a tailored product recommendation",
-                "Unlock membership benefits and referral rewards",
-              ].map((step, index) => (
-                <div
-                  key={step}
-                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"
-                >
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-sky-100">
-                    0{index + 1}
-                  </div>
-                  <p className="text-sm leading-6 text-slate-200">{step}</p>
-                </div>
-              ))}
+            <div className="mt-5 flex justify-end">
+              <div className="max-w-[82%] rounded-[22px] bg-[linear-gradient(135deg,#7C3AED,#00C2FF)] px-4 py-3 text-sm leading-6 text-white shadow-[0_0_32px_rgba(124,58,237,0.35)]">
+                我站很久，腿很酸，脚也很累。
+              </div>
             </div>
+            <div className="mt-4 max-w-[88%] rounded-[22px] border border-white/10 bg-white/7 px-4 py-4 text-sm leading-6 text-white/78">
+              你现在更像是久站后的循环疲劳。先做日常恢复，再搭配适合久站场景的支持型产品会更顺。
+            </div>
+          </div>
+
+          <div className="glass-card float-card-delay absolute bottom-10 left-0 w-[58%] rounded-[30px] p-5">
+            <div className="flex items-center justify-between">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B7FF3C]">
+                推荐组合
+              </div>
+              <div className="rounded-full bg-[#B7FF3C]/16 px-3 py-1 text-xs font-semibold text-[#D8FF87]">
+                2 款
+              </div>
+            </div>
+            <div className="mt-4 rounded-[24px] bg-[linear-gradient(135deg,rgba(183,255,60,0.16),rgba(0,194,255,0.12))] p-4">
+              <div className="text-lg font-bold text-white">UFIT Infra Socks</div>
+              <div className="mt-2 text-sm leading-6 text-white/70">
+                适合久站脚部疲劳、腿部不轻松的人群。
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-card float-card-slow absolute bottom-0 right-4 w-[40%] rounded-[28px] p-5">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF4FD8]">
+              实时状态
+            </div>
+            <div className="mt-4 text-4xl font-black tracking-[-0.05em] text-white">78</div>
+            <div className="mt-2 text-sm text-white/65">AI 健康分数</div>
           </div>
         </div>
       </section>
 
-      <section id="ai-coach" className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="space-y-5">
+      <section id="ai-coach" className="section-reveal grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="space-y-6">
           <SectionHeading
-            eyebrow="Ask UFIT AI"
-            title="Lead with AI, not old-school MLM screens"
-            description="Let prospects type a real wellness issue first. The demo responds with practical guidance, product fit, and a path into membership."
+            eyebrow="AI DEMO"
+            title="像真实 App 一样聊，不像表单。"
+            description="先输入疲劳、久坐、久站、恢复这类真实感受。AI 会用更短、更好懂的方式回你，并把推荐产品从旁边滑出来。"
           />
-          <div className="rounded-[2rem] border border-white/70 bg-white/75 p-6 shadow-[0_20px_60px_rgba(41,75,119,0.10)] backdrop-blur">
-            <div className="text-sm font-semibold text-slate-900">
-              Example prompts
+          <div className="glass-card rounded-[28px] p-6">
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
+              快速示例
             </div>
             <div className="mt-4 grid gap-3">
               {[
-                "My legs feel tired after standing all day",
-                "I have lower back discomfort",
-                "Which product is best for recovery?",
-                "I sit too long and feel stiff",
+                "我站很久，腿很酸",
+                "我有点腰部不舒服",
+                "哪款产品更适合恢复",
+                "我久坐以后身体很僵",
               ].map((prompt) => (
                 <div
                   key={prompt}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600"
+                  className="rounded-[22px] border border-white/10 bg-white/6 px-4 py-3 text-sm text-white/72"
                 >
                   {prompt}
                 </div>
@@ -126,32 +161,56 @@ export default function Home() {
         <AiChatDemo />
       </section>
 
-      <section id="features" className="grid gap-5 lg:grid-cols-4">
-        {featureCards.map((feature) => (
-          <FeatureCard key={feature.title} {...feature} />
-        ))}
+      <section id="features" className="section-reveal">
+        <SectionHeading
+          eyebrow="WHAT UFIT AI CAN DO"
+          title="不只是聊天，还是一套 AI 健康操作系统。"
+          description="不只是 AI 教练。UFIT AI 还能帮会员规划每日节奏、生成餐单、安排训练、匹配产品、分析每周习惯。"
+        />
+        <div className="mt-8">
+          <AIToolsShowcase compact />
+        </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-3">
-        <div className="lg:col-span-2" id="membership">
+      <section className="section-reveal">
+        <SectionHeading
+          eyebrow="WHY MEMBERS JOIN"
+          title="先问 AI，再配产品，再开权益。"
+          description="四步就能把这个项目和老派 MLM 拉开距离。"
+        />
+        <div className="mt-8 grid gap-5 lg:grid-cols-4">
+          {featureCards.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
+        </div>
+      </section>
+
+      <section id="membership" className="section-reveal grid gap-8 lg:grid-cols-[1.12fr_0.88fr]">
+        <div>
           <SectionHeading
-            eyebrow="Wellness Benefits"
-            title="Simple, credible wellness outcomes"
-            description="Position UFIT as a daily lifestyle platform: recovery, circulation, energy, and better routines."
+            eyebrow="MEMBERSHIP ENERGY"
+            title="会员感受，应该比说明更先到位。"
+            description="视觉上像 AI 健康俱乐部，体验上像一个愿意每天打开的生活方式平台。"
           />
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {wellnessBenefits.map((benefit) => (
+            {wellnessBenefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-[0_12px_32px_rgba(41,75,119,0.08)]"
+                className={`glass-card rounded-[28px] p-6 transition hover:scale-[1.02] ${
+                  index === 0
+                    ? "shadow-[0_0_60px_rgba(0,194,255,0.12)]"
+                    : index === 1
+                      ? "shadow-[0_0_60px_rgba(124,58,237,0.14)]"
+                      : index === 2
+                        ? "shadow-[0_0_60px_rgba(255,79,216,0.12)]"
+                        : "shadow-[0_0_60px_rgba(183,255,60,0.12)]"
+                }`}
               >
-                <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
+                <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
                   {benefit.label}
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-slate-950">
-                  {benefit.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
+                <h3 className="mt-4 text-2xl font-bold text-white">{benefit.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-white/68">
                   {benefit.description}
                 </p>
               </div>
@@ -159,80 +218,125 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-slate-200/70 bg-slate-50/80 p-6">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-            Membership Benefits
+        <div className="glass-card rounded-[32px] p-6">
+          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
+            MEMBER PERKS
           </div>
           <div className="mt-5 space-y-4">
-            {membershipBenefits.map((benefit) => (
+            {membershipBenefits.map((benefit, index) => (
               <div
                 key={benefit}
-                className="rounded-2xl border border-slate-200 bg-white p-4"
+                className={`rounded-[24px] border px-5 py-4 text-base font-semibold ${
+                  index % 4 === 0
+                    ? "border-[#00C2FF]/20 bg-[#00C2FF]/10 text-white"
+                    : index % 4 === 1
+                      ? "border-[#7C3AED]/20 bg-[#7C3AED]/10 text-white"
+                      : index % 4 === 2
+                        ? "border-[#FF4FD8]/20 bg-[#FF4FD8]/10 text-white"
+                        : "border-[#B7FF3C]/20 bg-[#B7FF3C]/10 text-white"
+                }`}
               >
-                <div className="text-base font-semibold text-slate-950">{benefit}</div>
+                {benefit}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="products">
+      <section id="products" className="section-reveal">
         <SectionHeading
-          eyebrow="Featured Products"
-          title="Product stories that support the AI guidance"
-          description="Each product card is framed around lifestyle use cases, not hard medical claims."
+          eyebrow="PRODUCT STRIP"
+          title="产品卡要像潮流健康装备，不像占位框。"
+          description="更适合年轻用户的，是带氛围、带身份、带场景的产品表达。"
         />
-        <div className="mt-6 grid gap-5 lg:grid-cols-4">
+        <div className="mt-8 grid gap-5 lg:grid-cols-4">
           {featuredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
 
-      <section id="referral" className="rounded-[2.25rem] border border-white/70 bg-white/80 p-8 shadow-[0_20px_60px_rgba(41,75,119,0.10)] backdrop-blur">
-        <SectionHeading
-          eyebrow="Referral / Rewards Preview"
-          title="This is more than a member system"
-          description="UFIT AI helps members manage referrals, track growth, and understand wellness needs with AI."
-        />
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {referralPreview.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-[1.75rem] border border-slate-200/80 bg-slate-50/80 p-5"
-            >
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {item.label}
+      <section id="referral" className="section-reveal grid gap-6 lg:grid-cols-[1fr_1fr]">
+        <div className="glass-card rounded-[32px] p-8">
+          <SectionHeading
+            eyebrow="REFERRAL EXPERIENCE"
+            title="看起来像 creator growth dashboard。"
+            description="推荐网络不该让人想到奖金树，而是成长、动能、转化和奖励节奏。"
+          />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {referralPreview.map((item, index) => (
+              <div
+                key={item.label}
+                className={`rounded-[24px] border p-5 ${
+                  index === 0
+                    ? "border-[#00C2FF]/16 bg-[#00C2FF]/10"
+                    : index === 1
+                      ? "border-[#7C3AED]/16 bg-[#7C3AED]/10"
+                      : index === 2
+                        ? "border-[#B7FF3C]/16 bg-[#B7FF3C]/10"
+                        : "border-[#FF4FD8]/16 bg-[#FF4FD8]/10"
+                }`}
+              >
+                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
+                  {item.label}
+                </div>
+                <div className="mt-3 text-4xl font-black tracking-[-0.05em] text-white">
+                  {item.value}
+                </div>
               </div>
-              <div className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
-                {item.value}
+            ))}
+          </div>
+        </div>
+
+        <div className="glass-card rounded-[32px] p-8">
+          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
+            GROWTH MOMENTUM
+          </div>
+          <div className="mt-6 space-y-4">
+            {[
+              "AI 咨询最多的是久站疲劳和日常恢复。",
+              "产品点击最高的是支撑类与循环类组合。",
+              "会员最容易从 AI 对话后进入推荐链接。",
+            ].map((note, index) => (
+              <div
+                key={note}
+                className={`rounded-[24px] border px-5 py-4 text-sm leading-7 text-white/72 ${
+                  index === 0
+                    ? "border-[#00C2FF]/16 bg-white/6"
+                    : index === 1
+                      ? "border-[#FF4FD8]/16 bg-white/6"
+                      : "border-[#B7FF3C]/16 bg-white/6"
+                }`}
+              >
+                {note}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="rounded-[2.5rem] border border-slate-200/70 bg-slate-950 p-8 text-white shadow-[0_20px_60px_rgba(15,23,42,0.18)]">
-        <div className="max-w-3xl">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-200">
-            Final CTA
-          </div>
-          <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight sm:text-5xl">
-            Join the Future of Wellness Membership
-          </h2>
+      <section className="section-reveal glass-card rounded-[36px] px-8 py-10 text-center">
+        <div className="text-sm font-semibold uppercase tracking-[0.24em] text-white/45">
+          FINAL CTA
         </div>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-black tracking-[-0.05em] text-white sm:text-5xl">
+          你的健康升级，可以从一段 AI 对话开始。
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-white/68">
+          先把客户带进来感受，再讲会员、产品和推荐增长，整个 demo 会更像未来平台，而不是传统系统。
+        </p>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href="/login"
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-50"
+            className="pulse-glow inline-flex items-center justify-center rounded-full bg-[linear-gradient(135deg,#7C3AED,#FF4FD8)] px-7 py-3.5 text-sm font-semibold text-white transition hover:scale-[1.02]"
           >
-            Join Now
+            立即加入
           </Link>
           <Link
             href="/dashboard"
-            className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-200 hover:text-sky-100"
+            className="inline-flex items-center justify-center rounded-full border border-white/16 bg-white/6 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
           >
-            Explore Demo
+            查看 Demo
           </Link>
         </div>
       </section>

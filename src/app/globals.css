@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f8fc;
-  --foreground: #0f172a;
+  --background: #0b1020;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
@@ -26,11 +26,122 @@ body {
   font-family: var(--font-plus-jakarta), sans-serif;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(124, 58, 237, 0.38), transparent 24%),
+    radial-gradient(circle at 82% 14%, rgba(0, 194, 255, 0.28), transparent 20%),
+    radial-gradient(circle at 78% 72%, rgba(255, 79, 216, 0.16), transparent 22%),
+    radial-gradient(circle at 25% 78%, rgba(183, 255, 60, 0.12), transparent 18%);
+  filter: blur(18px);
+  animation: floatGlow 18s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
 a,
 button {
   cursor: pointer;
 }
 
 ::selection {
-  background: rgba(125, 184, 255, 0.35);
+  background: rgba(124, 58, 237, 0.45);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  box-shadow:
+    0 24px 80px rgba(24, 30, 68, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.8),
+    rgba(0, 194, 255, 0.7),
+    rgba(255, 79, 216, 0.55)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.section-reveal {
+  animation: revealUp 0.7s ease both;
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+
+.float-card {
+  animation: floatCard 8s ease-in-out infinite;
+}
+
+.float-card-delay {
+  animation: floatCard 9s ease-in-out infinite 0.8s;
+}
+
+.float-card-slow {
+  animation: floatCard 11s ease-in-out infinite 1.2s;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 12px 32px rgba(124, 58, 237, 0.3),
+      0 0 22px rgba(0, 194, 255, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 18px 48px rgba(124, 58, 237, 0.42),
+      0 0 36px rgba(0, 194, 255, 0.26);
+  }
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.6deg);
+  }
+}
+
+@keyframes floatGlow {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(0, -12px, 0) scale(1.06);
+  }
 }

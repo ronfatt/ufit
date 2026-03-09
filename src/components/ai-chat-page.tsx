@@ -5,25 +5,25 @@ export function AiChatPage() {
   return (
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pb-24 pt-10 sm:px-8 lg:px-10">
       <SectionHeading
-        eyebrow="AI Wellness Chat"
-        title="A full-page assistant for lifestyle support"
-        description="The AI stays concise, avoids diagnosis, and recommends wellness products as routine support only."
+        eyebrow="AI WELLNESS CHAT"
+        title="全页 AI 健康对话体验"
+        description="AI 保持简短、友好、不诊断疾病，只做生活方式支持与健康产品建议。"
       />
       <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
-        <div className="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_18px_50px_rgba(41,75,119,0.08)] backdrop-blur">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-            Sample prompts
+        <div className="glass-card rounded-[2rem] p-6">
+          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
+            SAMPLE PROMPTS
           </div>
           <div className="mt-5 grid gap-3">
             {[
-              "My legs feel tired after standing all day",
-              "Which product is best for recovery?",
-              "I sit too long and feel stiff",
-              "What wellness product suits lower back discomfort?",
+              "我站很久以后腿很酸",
+              "哪款产品更适合恢复",
+              "我久坐以后身体很僵",
+              "腰部不适适合什么健康产品",
             ].map((prompt) => (
               <div
                 key={prompt}
-                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600"
+                className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-white/68"
               >
                 {prompt}
               </div>

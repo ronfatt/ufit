@@ -1,6 +1,6 @@
 # UFIT AI Wellness Membership Demo
 
-A modern demo web app for UFIT that positions the brand as `AI Wellness + Membership + Referral Commerce`, not a traditional MLM dashboard.
+一个面向客户演示的 UFIT AI 健康会员平台 Demo，核心定位不是传统 MLM，而是 `AI 健康 + 会员体验 + 推荐增长 + 可视化 AI 工具`。
 
 ## Stack
 
@@ -13,20 +13,27 @@ A modern demo web app for UFIT that positions the brand as `AI Wellness + Member
 
 ## Included Pages
 
-- `/` Homepage with AI Wellness Coach demo
-- `/ai-coach` Full AI wellness chat page
-- `/dashboard` Member Dashboard
-- `/referral` Referral / Network page
-- `/recommendation` Product Recommendation page
-- `/login` Login / Register page
+- `/` 首页，含 Hero、AI Chat、AI 工具展示、产品和推荐增长
+- `/ai-tools` AI 工具总览页
+- `/ai-coach` 全页 AI 健康聊天页
+- `/dashboard` 会员仪表盘
+- `/referral` 推荐网络页
+- `/recommendation` 产品推荐页
+- `/login` 登录 / 注册页
 
 ## Demo Notes
 
-- The UI is built around mock data so it can be shown immediately to clients.
-- The AI route uses `OPENAI_API_KEY` when present.
-- If no OpenAI key is set, the app falls back to a deterministic demo response so the showcase still works.
-- Supabase variables are included in `.env.example`, but auth and database are intentionally not fully wired yet to keep the MVP fast.
-- Suggested table schema is included in [src/lib/supabase-schema.sql](/Users/rms/Desktop/Ai%20Project/Ufit/src/lib/supabase-schema.sql).
+- 所有页面都基于 mock data，可直接用于客户演示。
+- 已加入 5 个可视化 AI 工具模块：
+  - AI 每日计划
+  - AI 餐单规划
+  - AI 训练生成器
+  - AI 产品匹配
+  - AI 每周洞察
+- 已支持 demo persona 切换：`Sarah Lim`、`Jason Tan`、`Aina`。
+- 每个 AI 工具模块都会模拟 1.2 秒生成过程，再显示不同人设下的假数据结果。
+- AI route 在有 `OPENAI_API_KEY` 时走真实接口；没有时自动回退到本地 mock 响应。
+- Supabase 变量已预留，表结构建议在 [src/lib/supabase-schema.sql](/Users/rms/Desktop/Ai%20Project/Ufit/src/lib/supabase-schema.sql)。
 
 ## Getting Started
 
@@ -66,9 +73,15 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
 ## AI Fallback
 
-- With `OPENAI_API_KEY`, the app calls the local API route and requests a structured wellness response.
-- Without `OPENAI_API_KEY`, the API route uses predefined keyword-based responses for demo stability.
-- The assistant is intentionally limited to wellness guidance and product support language, not diagnosis.
+- 有 `OPENAI_API_KEY` 时，`/api/ai-coach` 会请求真实 AI 响应。
+- 没有 key 时，会用本地关键词规则返回健康建议、产品推荐和 CTA。
+- 所有输出都限制在生活方式支持和日常健康语气内，不做诊断或治疗承诺。
+
+## AI Tools Demo
+
+- AI 工具 mock 数据位于 [src/data/mock-ai-tools.ts](/Users/rms/Desktop/Ai%20Project/Ufit/src/data/mock-ai-tools.ts)。
+- 5 个工具组件位于 [src/components/ai-tools](/Users/rms/Desktop/Ai%20Project/Ufit/src/components/ai-tools)。
+- 默认演示人设是 `Jason Tan`，更适合现场展示久站疲劳、恢复、产品匹配和每周洞察。
 
 ## Deploying To Vercel
 

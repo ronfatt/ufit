@@ -8,28 +8,26 @@ export default function LoginPage() {
   return (
     <div className="mx-auto flex min-h-[calc(100vh-13rem)] w-full max-w-7xl items-center px-6 py-10 sm:px-8 lg:px-10">
       <div className="grid w-full gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="rounded-[2rem] border border-slate-200/70 bg-slate-950 p-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] xl:p-10">
-          <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-sky-200">
-            Member Access
+        <div className="glass-card rounded-[2rem] p-8 text-white xl:p-10">
+          <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#00C2FF]">
+            MEMBER ACCESS
           </div>
-          <h1 className="mt-6 font-serif text-5xl font-semibold tracking-tight">
-            Welcome to UFIT AI
+          <h1 className="mt-6 text-5xl font-black tracking-[-0.05em]">
+            欢迎来到 UFIT AI
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-7 text-slate-300">
-            Join the AI-powered wellness membership experience. This auth screen
-            is demo-lightweight but structured to be easy to connect to
-            Supabase.
+          <p className="mt-5 max-w-xl text-base leading-7 text-white/70">
+            这是一个年轻化的 AI 健康会员入口，不是传统登录页。当前保留演示流程，后续可以直接接入 Supabase。
           </p>
           <div className="mt-8 grid gap-3">
             {[
-              "AI Wellness Coach on the homepage",
-              "Personal dashboard with mock health score",
-              "Referral commerce instead of traditional MLM screens",
+              "首页先体验 AI 健康教练",
+              "进入个人仪表盘查看健康分数",
+              "推荐网络更像 growth dashboard",
               supabaseStatus.message,
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+                className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/72"
               >
                 {item}
               </div>
@@ -39,17 +37,17 @@ export default function LoginPage() {
 
         <div className="space-y-4">
           <AuthPanel />
-          <div className="rounded-[1.5rem] border border-sky-100 bg-sky-50 p-5">
-            <div className="text-sm font-semibold text-slate-950">Demo Routes</div>
+          <div className="glass-card rounded-[1.5rem] p-5">
+            <div className="text-sm font-semibold text-white">演示入口</div>
             <div className="mt-3 flex flex-wrap gap-3 text-sm">
-              <Link href="/dashboard" className="text-sky-700 hover:text-sky-800">
-                Dashboard
+              <Link href="/dashboard" className="text-[#00C2FF] hover:text-white">
+                仪表盘
               </Link>
-              <Link href="/referral" className="text-sky-700 hover:text-sky-800">
-                Referral
+              <Link href="/referral" className="text-[#00C2FF] hover:text-white">
+                推荐网络
               </Link>
-              <Link href="/recommendation" className="text-sky-700 hover:text-sky-800">
-                Product Recommendation
+              <Link href="/recommendation" className="text-[#00C2FF] hover:text-white">
+                产品推荐
               </Link>
             </div>
           </div>

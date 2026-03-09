@@ -6,14 +6,14 @@ type MetricCardProps = {
 
 export function MetricCard({ label, value, note }: MetricCardProps) {
   return (
-    <div className="rounded-[1.5rem] border border-slate-200/80 bg-slate-50/85 p-5">
-      <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+    <div className="glass-card rounded-[24px] p-5 transition hover:scale-[1.02]">
+      <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
         {label}
       </div>
-      <div className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+      <div className="mt-3 text-3xl font-black tracking-[-0.05em] text-white">
         {value}
       </div>
-      <p className="mt-2 text-sm leading-6 text-slate-500">{note}</p>
+      <p className="mt-2 text-sm leading-6 text-white/62">{note}</p>
     </div>
   );
 }

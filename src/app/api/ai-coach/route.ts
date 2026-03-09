@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
           {
             role: "system",
             content:
-              "You are UFIT AI, a wellness membership demo assistant. Give short lifestyle guidance, avoid diagnosis, recommend one or two wellness products in a commercial but credible tone, and include a brief wellness-only disclaimer when appropriate.",
+              "你是 UFIT AI，一名健康会员平台演示助手。请用中文输出，回答要简短、友好、生活方式导向，避免疾病诊断与治疗承诺。可以推荐一到两款健康产品，但语气要像日常健康支持，并在适当时加入非医疗建议的提醒。",
           },
           {
             role: "user",

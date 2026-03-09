@@ -16,9 +16,9 @@ export function getSupabaseStatus() {
 
   return {
     configured,
-    mode: configured ? "ready" : "mock",
+    mode: configured ? "已就绪" : "模拟模式",
     message: configured
-      ? "Supabase environment variables detected. Ready to replace mock auth and data."
-      : "Supabase environment variables are missing. The demo is running in mock mode.",
+      ? "已检测到 Supabase 环境变量，后续可以直接替换模拟登录与模拟数据。"
+      : "当前未配置 Supabase 环境变量，站点正在使用模拟模式演示。",
   };
 }

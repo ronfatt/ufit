@@ -1,6 +1,9 @@
 import { DashboardShell } from "@/components/dashboard-shell";
+import { AIWellnessScoreCard } from "@/components/ai-tools/ai-wellness-score-card";
+import { AIToolsShowcase } from "@/components/ai-tools/ai-tools-showcase";
 import { MetricCard } from "@/components/metric-card";
 import { ProductCard } from "@/components/product-card";
+import { demoProfiles } from "@/data/mock-ai-tools";
 import {
   aiInsight,
   dashboardMetrics,
@@ -10,19 +13,20 @@ import {
 } from "@/lib/mock-data";
 
 export default function DashboardPage() {
+  const defaultProfile = demoProfiles.find((profile) => profile.id === "jason") ?? demoProfiles[0];
+
   return (
-    <DashboardShell title="Member Dashboard">
+    <DashboardShell title="会员仪表盘">
       <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="rounded-[2rem] border border-white/60 bg-white/80 p-8 shadow-[0_20px_60px_rgba(41,75,119,0.10)] backdrop-blur">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
-            Welcome Card
+        <div className="glass-card rounded-[2rem] p-8">
+          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
+            WELCOME CARD
           </div>
-          <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-950">
-            Here is your wellness and membership overview.
+          <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] text-white">
+            这里是你的健康与会员总览。
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-            A modern dashboard layout that keeps wellness, product fit, and
-            referral growth visible without feeling like an old back office.
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white/68">
+            更像 AI lifestyle dashboard，而不是传统后台。健康状态、推荐产品、推荐网络和奖励进度都在一个视图里。
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {dashboardMetrics.map((metric) => (
@@ -31,40 +35,52 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-slate-200/70 bg-slate-950 p-8 text-white">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">
-            Referral Link
+        <div className="glass-card rounded-[2rem] p-8 text-white">
+          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#00C2FF]">
+            REFERRAL LINK
           </div>
-          <div className="mt-5 rounded-3xl border border-white/10 bg-white/5 p-5">
-            <div className="text-xs uppercase tracking-[0.2em] text-slate-400">
-              Personal URL
+          <div className="mt-5 rounded-3xl border border-white/10 bg-white/6 p-5">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/40">
+              PERSONAL URL
             </div>
             <div className="mt-3 text-sm font-medium text-white">
               ufit.ai/join/SARAH2026
             </div>
           </div>
-          <div className="mt-5 space-y-3 text-sm text-slate-300">
-            <p>My Sponsor: Farah Wellness Group</p>
-            <p>Active Members: 8</p>
-            <p>Estimated Rewards: RM 1,280</p>
+          <div className="mt-5 space-y-3 text-sm text-white/70">
+            <p>我的 Sponsor：Farah Wellness Group</p>
+            <p>活跃成员：8</p>
+            <p>预计奖励：RM 1,280</p>
           </div>
           <button
             type="button"
-            className="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-50"
+            className="mt-6 inline-flex rounded-full bg-[linear-gradient(135deg,#7C3AED,#00C2FF)] px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.02]"
           >
-            Copy Referral Link
+            复制推荐链接
           </button>
         </div>
+      </section>
+
+      <section className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+        <AIWellnessScoreCard profile={defaultProfile} />
+        <section className="glass-card rounded-[2rem] p-6">
+          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
+            TODAY&apos;S AI RECOMMENDATION
+          </div>
+          <div className="mt-4 max-w-3xl text-xl font-bold tracking-[-0.03em] text-white">
+            {defaultProfile.recommendation}
+          </div>
+        </section>
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[1fr_1fr]">
         <div>
           <div className="max-w-3xl">
-            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
-              Recommended Products
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
+              RECOMMENDED PRODUCTS
             </div>
-            <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              AI-picked products for your current routine
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] text-white sm:text-5xl">
+              AI 为你挑出的本周推荐
             </h2>
           </div>
           <div className="mt-6 grid gap-5">
@@ -75,9 +91,9 @@ export default function DashboardPage() {
         </div>
 
         <div className="grid gap-6">
-          <div className="rounded-[2rem] border border-white/60 bg-white/80 p-6">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Team Summary
+          <div className="glass-card rounded-[2rem] p-6">
+            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
+              TEAM SUMMARY
             </div>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               {teamSummary.map((item) => (
@@ -86,9 +102,9 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/60 bg-white/80 p-6">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Rewards Summary
+          <div className="glass-card rounded-[2rem] p-6">
+            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
+              REWARDS SUMMARY
             </div>
             <div className="mt-5 grid gap-4">
               {rewardSummary.map((item) => (
@@ -99,13 +115,25 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      <section className="mt-8 rounded-[2rem] border border-white/60 bg-white/80 p-6 shadow-[0_18px_50px_rgba(41,75,119,0.08)] backdrop-blur">
-        <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-          AI Insight
+      <section className="glass-card mt-8 rounded-[2rem] p-6">
+        <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
+          AI INSIGHT
         </div>
-        <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
+        <p className="mt-4 max-w-3xl text-base leading-8 text-white/68">
           {aiInsight}
         </p>
+      </section>
+
+      <section className="mt-8">
+        <div className="mb-6">
+          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
+            AI TOOLS
+          </div>
+          <h2 className="mt-3 text-4xl font-black tracking-[-0.05em] text-white">
+            直接演示 5 个 AI 工具
+          </h2>
+        </div>
+        <AIToolsShowcase compact />
       </section>
     </DashboardShell>
   );

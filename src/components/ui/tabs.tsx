@@ -10,7 +10,16 @@ export function TabsList({
   className?: string;
   children: ReactNode;
 }) {
-  return <div className={cn("grid grid-cols-2 gap-2 rounded-full bg-slate-100 p-1", className)}>{children}</div>;
+  return (
+    <div
+      className={cn(
+        "grid grid-cols-2 gap-2 rounded-full border border-white/10 bg-white/6 p-1",
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
 }
 
 export function TabsTrigger({
@@ -28,7 +37,9 @@ export function TabsTrigger({
       onClick={onClick}
       className={cn(
         "rounded-full px-4 py-3 text-center text-sm font-semibold transition",
-        active ? "bg-white text-slate-950 shadow-sm" : "text-slate-500",
+        active
+          ? "bg-[linear-gradient(135deg,#7C3AED,#00C2FF)] text-white shadow-[0_0_24px_rgba(124,58,237,0.24)]"
+          : "text-white/55",
       )}
     >
       {children}

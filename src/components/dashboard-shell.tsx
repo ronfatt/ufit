@@ -3,12 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { getSupabaseStatus } from "@/lib/supabase";
 
 const sidebarItems = [
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/ai-coach", label: "AI Coach" },
-  { href: "/recommendation", label: "Products" },
-  { href: "/referral", label: "Referral Network" },
-  { href: "/referral", label: "Rewards" },
-  { href: "/login", label: "Profile" },
+  { href: "/dashboard", label: "仪表盘" },
+  { href: "/ai-coach", label: "AI 教练" },
+  { href: "/recommendation", label: "产品推荐" },
+  { href: "/referral", label: "推荐网络" },
+  { href: "/referral", label: "奖励概览" },
+  { href: "/login", label: "个人资料" },
 ];
 
 export function DashboardShell({
@@ -22,14 +22,14 @@ export function DashboardShell({
 
   return (
     <div className="mx-auto flex w-full max-w-7xl gap-6 px-6 pb-24 pt-10 sm:px-8 lg:px-10">
-      <aside className="sticky top-6 hidden h-fit w-72 rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_18px_50px_rgba(41,75,119,0.08)] backdrop-blur lg:block">
-        <div className="rounded-[1.5rem] bg-slate-950 p-5 text-white">
+      <aside className="glass-card sticky top-6 hidden h-fit w-72 rounded-[2rem] p-6 lg:block">
+        <div className="rounded-[1.5rem] bg-[linear-gradient(145deg,rgba(124,58,237,0.92),rgba(0,194,255,0.55))] p-5 text-white shadow-[0_0_50px_rgba(124,58,237,0.24)]">
           <div className="text-xs uppercase tracking-[0.22em] text-sky-200">
             UFIT AI
           </div>
           <div className="mt-3 text-2xl font-semibold">{title}</div>
-          <p className="mt-2 text-sm leading-6 text-slate-300">
-            A modern wellness membership shell for client-facing demos.
+          <p className="mt-2 text-sm leading-6 text-white/80">
+            更年轻、更像 AI lifestyle platform 的会员体验。
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export function DashboardShell({
             <Link
               key={`${item.href}-${item.label}`}
               href={item.href}
-              className="rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-sky-50 hover:text-sky-700"
+              className="rounded-2xl px-4 py-3 text-sm font-medium text-white/68 transition hover:bg-white/8 hover:text-white"
             >
               {item.label}
             </Link>
@@ -47,16 +47,16 @@ export function DashboardShell({
       </aside>
 
       <div className="min-w-0 flex-1">
-        <div className="mb-6 flex flex-col gap-4 rounded-[2rem] border border-white/70 bg-white/80 p-5 shadow-[0_18px_50px_rgba(41,75,119,0.08)] backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+        <div className="glass-card mb-6 flex flex-col gap-4 rounded-[2rem] p-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Wellness Membership Workspace
+            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
+              WELLNESS MEMBERSHIP WORKSPACE
             </div>
-            <div className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">
-              Welcome back, Sarah Lim
+            <div className="mt-2 text-3xl font-semibold tracking-tight text-white">
+              欢迎回来，Sarah Lim
             </div>
             <div className="mt-3">
-              <Badge className="tracking-[0.16em]">
+              <Badge className="border-[#B7FF3C]/30 bg-[#B7FF3C]/15 text-[#D8FF87] tracking-[0.16em]">
                 Supabase {supabaseStatus.mode}
               </Badge>
             </div>
@@ -64,10 +64,10 @@ export function DashboardShell({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <input
               type="text"
-              placeholder="Search AI insights or products"
-              className="rounded-full border border-slate-200 bg-slate-50 px-5 py-3 text-sm text-slate-700 outline-none transition focus:border-sky-300 focus:bg-white"
+              placeholder="搜索 AI 洞察或产品"
+              className="rounded-full border border-white/12 bg-white/6 px-5 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-[#00C2FF]/60 focus:bg-white/10"
             />
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#FF4FD8,#7C3AED)] text-sm font-semibold text-white shadow-[0_0_24px_rgba(255,79,216,0.35)]">
               SL
             </div>
           </div>
