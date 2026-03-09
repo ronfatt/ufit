@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Product } from "@/lib/mock-data";
+import { Product } from "@/data/mock-data";
 
 export function ProductCard({
   product,
@@ -32,12 +32,23 @@ export function ProductCard({
         </div>
       )}
 
+      <div className="mt-4 flex flex-wrap gap-2">
+        {product.tags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
       <div className="mt-6 flex gap-3">
         <Link
-          href="/recommend"
+          href="/recommendation"
           className="inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
         >
-          View Recommendation
+          {compact ? "Add to Plan" : "View Recommendation"}
         </Link>
         <Link
           href="/login"

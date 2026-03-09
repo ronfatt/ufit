@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { recommendationOptions } from "@/data/mock-data";
 
 type CoachProduct = {
   name: string;
@@ -15,15 +16,8 @@ type CoachResponse = {
   cta: string;
 };
 
-const symptomOptions = [
-  "Fatigue",
-  "Poor circulation",
-  "Lower back discomfort",
-  "Sports recovery",
-];
-
 export function ProductSelector() {
-  const [active, setActive] = useState(symptomOptions[0]);
+  const [active, setActive] = useState(recommendationOptions[0]);
   const [response, setResponse] = useState<CoachResponse | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -56,7 +50,7 @@ export function ProductSelector() {
           Select a need
         </div>
         <div className="mt-5 flex flex-wrap gap-3">
-          {symptomOptions.map((option) => {
+          {recommendationOptions.map((option) => {
             const isActive = option === active;
 
             return (
@@ -81,9 +75,9 @@ export function ProductSelector() {
             Why this page matters
           </div>
           <p className="mt-3 text-sm leading-7 text-slate-600">
-            This is the fastest way to show the client that the business starts
-            from wellness needs, then moves into products, membership, and
-            referral commerce.
+            This recommendation is for wellness guidance only and is not medical
+            advice. It is designed to show how AI, products, and membership can
+            work together in one modern flow.
           </p>
         </div>
       </div>
@@ -141,7 +135,7 @@ export function ProductSelector() {
                 href="/dashboard"
                 className="inline-flex rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-sky-200 hover:text-sky-100"
               >
-                View Dashboard
+                View Product
               </Link>
             </div>
 

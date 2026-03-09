@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
           {
             role: "system",
             content:
-              "You are UFIT AI, a wellness membership demo assistant. Give short lifestyle guidance, avoid diagnosis, and recommend one or two wellness products in a commercial but credible tone.",
+              "You are UFIT AI, a wellness membership demo assistant. Give short lifestyle guidance, avoid diagnosis, recommend one or two wellness products in a commercial but credible tone, and include a brief wellness-only disclaimer when appropriate.",
           },
           {
             role: "user",

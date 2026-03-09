@@ -15,9 +15,10 @@ type CoachResponse = {
 };
 
 const quickPrompts = [
-  "I feel tired after standing all day",
+  "My legs feel tired after standing all day",
   "I have lower back discomfort",
-  "I am not sleeping well recently",
+  "Which product is best for recovery?",
+  "I sit too long and feel stiff",
 ];
 
 export function AiChatDemo() {

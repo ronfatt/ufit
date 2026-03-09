@@ -5,6 +5,7 @@ A modern demo web app for UFIT that positions the brand as `AI Wellness + Member
 ## Stack
 
 - Next.js App Router
+- TypeScript
 - Tailwind CSS
 - OpenAI API ready via `/api/ai-coach`
 - Supabase-ready environment variables for future auth and database wiring
@@ -13,9 +14,10 @@ A modern demo web app for UFIT that positions the brand as `AI Wellness + Member
 ## Included Pages
 
 - `/` Homepage with AI Wellness Coach demo
+- `/ai-coach` Full AI wellness chat page
 - `/dashboard` Member Dashboard
 - `/referral` Referral / Network page
-- `/recommend` Product Recommendation page
+- `/recommendation` Product Recommendation page
 - `/login` Login / Register page
 
 ## Demo Notes
@@ -24,6 +26,7 @@ A modern demo web app for UFIT that positions the brand as `AI Wellness + Member
 - The AI route uses `OPENAI_API_KEY` when present.
 - If no OpenAI key is set, the app falls back to a deterministic demo response so the showcase still works.
 - Supabase variables are included in `.env.example`, but auth and database are intentionally not fully wired yet to keep the MVP fast.
+- Suggested table schema is included in [src/lib/supabase-schema.sql](/Users/rms/Desktop/Ai%20Project/Ufit/src/lib/supabase-schema.sql).
 
 ## Getting Started
 
@@ -52,6 +55,27 @@ npm run dev
 ```
 
 5. Open [http://localhost:3000](http://localhost:3000)
+
+## Environment Variables
+
+```env
+OPENAI_API_KEY=
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+```
+
+## AI Fallback
+
+- With `OPENAI_API_KEY`, the app calls the local API route and requests a structured wellness response.
+- Without `OPENAI_API_KEY`, the API route uses predefined keyword-based responses for demo stability.
+- The assistant is intentionally limited to wellness guidance and product support language, not diagnosis.
+
+## Deploying To Vercel
+
+1. Import the repository into Vercel.
+2. Add the environment variables from `.env.example`.
+3. Deploy with the default Next.js settings.
+4. Add Supabase credentials later when you are ready to replace the mock auth and data layers.
 
 ## Suggested Next Steps
 

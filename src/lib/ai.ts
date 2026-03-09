@@ -70,6 +70,14 @@ export function buildDemoCoachResponse(prompt: string) {
   ) {
     key = "sleep";
   }
+  if (
+    lowerPrompt.includes("circulation") ||
+    lowerPrompt.includes("legs") ||
+    lowerPrompt.includes("standing") ||
+    lowerPrompt.includes("feet")
+  ) {
+    key = "circulation";
+  }
 
   return {
     summary:
@@ -81,7 +89,7 @@ export function buildDemoCoachResponse(prompt: string) {
             ? "The main opportunity here is improving comfort, movement, and circulation support during the day."
             : "This looks like a daily energy and recovery issue linked to long standing hours or physical fatigue.",
     advice:
-      "Start with simple non-medical wellness steps: hydrate consistently, add 3 to 5 minute movement breaks, improve posture support, and build a repeatable recovery routine in the evening.",
+      "Start with simple non-medical wellness steps: hydrate consistently, add 3 to 5 minute movement breaks, improve posture support, and build a repeatable recovery routine in the evening. This is wellness guidance only and not medical advice.",
     products: productMap[key],
     cta: "Join the UFIT membership to unlock guided routines, product bundles, and referral rewards.",
   };

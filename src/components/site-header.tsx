@@ -2,9 +2,10 @@ import Link from "next/link";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/referral", label: "Referral / Network" },
-  { href: "/recommend", label: "Product Recommendation" },
+  { href: "/#features", label: "Features" },
+  { href: "/#membership", label: "Membership" },
+  { href: "/recommendation", label: "Products" },
+  { href: "/referral", label: "Referral" },
   { href: "/login", label: "Login" },
 ];
 
@@ -24,7 +25,8 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        <nav className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
+          <nav className="flex flex-wrap gap-2">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -34,7 +36,14 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-        </nav>
+          </nav>
+          <Link
+            href="/ai-coach"
+            className="inline-flex rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+          >
+            Try AI Coach
+          </Link>
+        </div>
       </div>
     </header>
   );
