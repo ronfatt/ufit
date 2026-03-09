@@ -16,7 +16,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "UFIT AI 健康会员 Demo",
+  title: "UFIT AI 健康会员演示站",
   description: "年轻化 AI 健康会员与推荐裂变平台演示站。",
 };
 

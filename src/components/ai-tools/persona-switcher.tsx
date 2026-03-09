@@ -15,10 +15,10 @@ export function PersonaSwitcher({
     <div className="glass-card rounded-[26px] p-4">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
-            SWITCH DEMO USER
+          <div className="text-xs font-semibold tracking-[0.22em] text-white/45">
+            切换演示用户
           </div>
-          <div className="mt-2 text-lg font-bold text-white">Switch Demo User</div>
+          <div className="mt-2 text-lg font-bold text-white">切换演示用户</div>
         </div>
         <div className="flex flex-wrap gap-3">
           {profiles.map((profile) => {

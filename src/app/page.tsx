@@ -17,8 +17,8 @@ export default function Home() {
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-24 px-6 pb-24 pt-10 sm:px-8 lg:px-10">
       <section className="section-reveal relative grid gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
         <div className="relative">
-          <div className="mb-6 inline-flex rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
-            AI WELLNESS + MEMBERSHIP + REFERRAL
+          <div className="mb-6 inline-flex rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold tracking-[0.28em] text-white/70">
+            AI 健康 + 会员体系 + 推荐增长
           </div>
           <h1 className="max-w-3xl font-sans text-[3.8rem] leading-[0.88] font-black tracking-[-0.06em] text-white sm:text-[4.7rem] lg:text-[5.5rem]">
             <span className="bg-[linear-gradient(135deg,#F8FAFC_0%,#B8C2FF_18%,#00C2FF_46%,#FF4FD8_72%,#B7FF3C_100%)] bg-clip-text text-transparent">
@@ -30,7 +30,7 @@ export default function Home() {
             <span className="text-white/88">增长更聪明。</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70">
-            这不是传统会员后台。UFIT AI 把健康建议、产品推荐、会员权益和推荐增长，做成一个年轻、上头、好懂的 AI lifestyle platform。
+            这不是传统会员后台。UFIT AI 把健康建议、产品推荐、会员权益和推荐增长，做成一个年轻、上头、好懂的 AI 生活方式平台。
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
@@ -79,19 +79,19 @@ export default function Home() {
           <div className="absolute right-8 top-20 h-40 w-40 rounded-full bg-[#00C2FF]/26 blur-[90px]" />
           <div className="absolute bottom-20 left-1/3 h-36 w-36 rounded-full bg-[#FF4FD8]/20 blur-[90px]" />
 
-          <div className="float-card absolute left-2 top-6 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#B7FF3C]">
-            AI MATCH
+          <div className="float-card absolute left-2 top-6 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-[#B7FF3C]">
+            AI 匹配
           </div>
-          <div className="float-card-delay absolute right-0 top-16 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF4FD8]">
-            GLOW MODE
+          <div className="float-card-delay absolute right-0 top-16 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-[#FF4FD8]">
+            活力模式
           </div>
-          <div className="float-card-slow absolute left-10 top-28 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#00C2FF]">
-            MEMBER PERKS
+          <div className="float-card-slow absolute left-10 top-28 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-[#00C2FF]">
+            会员权益
           </div>
 
           <div className="glass-card glow-border float-card absolute right-10 top-24 w-[72%] rounded-[32px] p-6">
-            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
-              UFIT AI CHAT
+            <div className="text-xs font-semibold tracking-[0.22em] text-white/45">
+              UFIT AI 对话
             </div>
             <div className="mt-5 flex justify-end">
               <div className="max-w-[82%] rounded-[22px] bg-[linear-gradient(135deg,#7C3AED,#00C2FF)] px-4 py-3 text-sm leading-6 text-white shadow-[0_0_32px_rgba(124,58,237,0.35)]">
@@ -133,8 +133,8 @@ export default function Home() {
       <section id="ai-coach" className="section-reveal grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
         <div className="space-y-6">
           <SectionHeading
-            eyebrow="AI DEMO"
-            title="像真实 App 一样聊，不像表单。"
+            eyebrow="AI 演示"
+            title="像真实应用一样聊，不像表单。"
             description="先输入疲劳、久坐、久站、恢复这类真实感受。AI 会用更短、更好懂的方式回你，并把推荐产品从旁边滑出来。"
           />
           <div className="glass-card rounded-[28px] p-6">
@@ -163,7 +163,7 @@ export default function Home() {
 
       <section id="features" className="section-reveal">
         <SectionHeading
-          eyebrow="WHAT UFIT AI CAN DO"
+          eyebrow="UFIT AI 能做什么"
           title="不只是聊天，还是一套 AI 健康操作系统。"
           description="不只是 AI 教练。UFIT AI 还能帮会员规划每日节奏、生成餐单、安排训练、匹配产品、分析每周习惯。"
         />
@@ -174,7 +174,7 @@ export default function Home() {
 
       <section className="section-reveal">
         <SectionHeading
-          eyebrow="WHY MEMBERS JOIN"
+          eyebrow="为什么用户会加入"
           title="先问 AI，再配产品，再开权益。"
           description="四步就能把这个项目和老派 MLM 拉开距离。"
         />
@@ -188,7 +188,7 @@ export default function Home() {
       <section id="membership" className="section-reveal grid gap-8 lg:grid-cols-[1.12fr_0.88fr]">
         <div>
           <SectionHeading
-            eyebrow="MEMBERSHIP ENERGY"
+            eyebrow="会员体验"
             title="会员感受，应该比说明更先到位。"
             description="视觉上像 AI 健康俱乐部，体验上像一个愿意每天打开的生活方式平台。"
           />
@@ -219,8 +219,8 @@ export default function Home() {
         </div>
 
         <div className="glass-card rounded-[32px] p-6">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
-            MEMBER PERKS
+          <div className="text-sm font-semibold tracking-[0.22em] text-white/45">
+            会员权益
           </div>
           <div className="mt-5 space-y-4">
             {membershipBenefits.map((benefit, index) => (
@@ -245,7 +245,7 @@ export default function Home() {
 
       <section id="products" className="section-reveal">
         <SectionHeading
-          eyebrow="PRODUCT STRIP"
+          eyebrow="产品展示"
           title="产品卡要像潮流健康装备，不像占位框。"
           description="更适合年轻用户的，是带氛围、带身份、带场景的产品表达。"
         />
@@ -259,8 +259,8 @@ export default function Home() {
       <section id="referral" className="section-reveal grid gap-6 lg:grid-cols-[1fr_1fr]">
         <div className="glass-card rounded-[32px] p-8">
           <SectionHeading
-            eyebrow="REFERRAL EXPERIENCE"
-            title="看起来像 creator growth dashboard。"
+          eyebrow="推荐体验"
+            title="看起来像创作者增长仪表盘。"
             description="推荐网络不该让人想到奖金树，而是成长、动能、转化和奖励节奏。"
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -289,8 +289,8 @@ export default function Home() {
         </div>
 
         <div className="glass-card rounded-[32px] p-8">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
-            GROWTH MOMENTUM
+          <div className="text-sm font-semibold tracking-[0.22em] text-white/45">
+            增长动能
           </div>
           <div className="mt-6 space-y-4">
             {[
@@ -316,8 +316,8 @@ export default function Home() {
       </section>
 
       <section className="section-reveal glass-card rounded-[36px] px-8 py-10 text-center">
-        <div className="text-sm font-semibold uppercase tracking-[0.24em] text-white/45">
-          FINAL CTA
+        <div className="text-sm font-semibold tracking-[0.24em] text-white/45">
+          立即开始
         </div>
         <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-black tracking-[-0.05em] text-white sm:text-5xl">
           你的健康升级，可以从一段 AI 对话开始。
@@ -336,7 +336,7 @@ export default function Home() {
             href="/dashboard"
             className="inline-flex items-center justify-center rounded-full border border-white/16 bg-white/6 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
           >
-            查看 Demo
+            查看演示
           </Link>
         </div>
       </section>

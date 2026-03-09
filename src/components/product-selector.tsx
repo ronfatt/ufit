@@ -46,8 +46,8 @@ export function ProductSelector() {
   return (
     <section className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
       <div className="glass-card rounded-[2rem] p-8">
-        <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-          SELECT A NEED
+        <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+          选择需求
         </div>
         <div className="mt-5 flex flex-wrap gap-3">
           {recommendationOptions.map((option) => {
@@ -71,8 +71,8 @@ export function ProductSelector() {
         </div>
 
         <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/6 p-5">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-            WHY THIS PAGE MATTERS
+          <div className="text-xs font-semibold tracking-[0.2em] text-white/45">
+            这个页面为什么重要
           </div>
           <p className="mt-3 text-sm leading-7 text-white/68">
             这个页面最重要的作用，是让客户一眼看懂：平台先从身体感受出发，再连接产品、会员和推荐增长。这只是健康建议，不是医疗诊断。
@@ -86,8 +86,8 @@ export function ProductSelector() {
         ) : (
           <div className="space-y-6">
             <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#00C2FF]">
-                SELECTED FOCUS
+              <div className="text-sm font-semibold tracking-[0.2em] text-[#00C2FF]">
+                当前关注点
               </div>
               <h2 className="mt-3 text-4xl font-black tracking-[-0.05em]">
                 {active}
@@ -98,8 +98,8 @@ export function ProductSelector() {
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/6 p-5">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-                AI RECOMMENDATION
+              <div className="text-xs font-semibold tracking-[0.2em] text-white/45">
+                AI 推荐说明
               </div>
               <p className="mt-3 text-sm leading-7 text-white/78">
                 {response.advice}

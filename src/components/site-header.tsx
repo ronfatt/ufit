@@ -20,8 +20,8 @@ export function SiteHeader() {
           </div>
           <div>
             <div className="text-lg font-semibold text-white">UFIT AI</div>
-            <div className="text-xs uppercase tracking-[0.22em] text-white/45">
-              WELLNESS MEMBERSHIP
+            <div className="text-xs tracking-[0.22em] text-white/45">
+              健康会员平台
             </div>
           </div>
         </Link>

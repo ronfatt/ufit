@@ -19,14 +19,14 @@ export default function DashboardPage() {
     <DashboardShell title="会员仪表盘">
       <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="glass-card rounded-[2rem] p-8">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-            WELCOME CARD
+          <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+            欢迎概览
           </div>
           <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] text-white">
             这里是你的健康与会员总览。
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-7 text-white/68">
-            更像 AI lifestyle dashboard，而不是传统后台。健康状态、推荐产品、推荐网络和奖励进度都在一个视图里。
+            更像 AI 生活方式仪表盘，而不是传统后台。健康状态、推荐产品、推荐网络和奖励进度都在一个视图里。
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {dashboardMetrics.map((metric) => (
@@ -36,12 +36,12 @@ export default function DashboardPage() {
         </div>
 
         <div className="glass-card rounded-[2rem] p-8 text-white">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#00C2FF]">
-            REFERRAL LINK
+          <div className="text-sm font-semibold tracking-[0.2em] text-[#00C2FF]">
+            推荐链接
           </div>
           <div className="mt-5 rounded-3xl border border-white/10 bg-white/6 p-5">
-            <div className="text-xs uppercase tracking-[0.2em] text-white/40">
-              PERSONAL URL
+            <div className="text-xs tracking-[0.2em] text-white/40">
+              个人链接
             </div>
             <div className="mt-3 text-sm font-medium text-white">
               ufit.ai/join/SARAH2026
@@ -64,8 +64,8 @@ export default function DashboardPage() {
       <section className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <AIWellnessScoreCard profile={defaultProfile} />
         <section className="glass-card rounded-[2rem] p-6">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-            TODAY&apos;S AI RECOMMENDATION
+          <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+            今日 AI 建议
           </div>
           <div className="mt-4 max-w-3xl text-xl font-bold tracking-[-0.03em] text-white">
             {defaultProfile.recommendation}
@@ -76,8 +76,8 @@ export default function DashboardPage() {
       <section className="grid gap-8 lg:grid-cols-[1fr_1fr]">
         <div>
           <div className="max-w-3xl">
-            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
-              RECOMMENDED PRODUCTS
+            <div className="text-sm font-semibold tracking-[0.22em] text-white/45">
+              推荐产品
             </div>
             <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] text-white sm:text-5xl">
               AI 为你挑出的本周推荐
@@ -92,8 +92,8 @@ export default function DashboardPage() {
 
         <div className="grid gap-6">
           <div className="glass-card rounded-[2rem] p-6">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-              TEAM SUMMARY
+            <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+              团队概览
             </div>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               {teamSummary.map((item) => (
@@ -103,8 +103,8 @@ export default function DashboardPage() {
           </div>
 
           <div className="glass-card rounded-[2rem] p-6">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-              REWARDS SUMMARY
+            <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+              奖励概览
             </div>
             <div className="mt-5 grid gap-4">
               {rewardSummary.map((item) => (
@@ -116,8 +116,8 @@ export default function DashboardPage() {
       </section>
 
       <section className="glass-card mt-8 rounded-[2rem] p-6">
-        <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-          AI INSIGHT
+        <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+          AI 洞察
         </div>
         <p className="mt-4 max-w-3xl text-base leading-8 text-white/68">
           {aiInsight}
@@ -126,8 +126,8 @@ export default function DashboardPage() {
 
       <section className="mt-8">
         <div className="mb-6">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/45">
-            AI TOOLS
+          <div className="text-sm font-semibold tracking-[0.22em] text-white/45">
+            AI 工具
           </div>
           <h2 className="mt-3 text-4xl font-black tracking-[-0.05em] text-white">
             直接演示 5 个 AI 工具

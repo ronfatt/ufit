@@ -9,15 +9,15 @@ import {
 import { AIToolShell } from "@/components/ai-tools/ai-tool-shell";
 
 export function AIProductMatcherCard({ profile }: { profile: DemoProfile }) {
-  const [symptom, setSymptom] = useState<(typeof symptomOptions)[number]>("Long Standing Hours");
+  const [symptom, setSymptom] = useState<(typeof symptomOptions)[number]>("久站工时");
   const result = getProductMatch(profile.id, symptom);
 
   return (
     <AIToolShell
-      title="AI Product Match"
-      subtitle="Products recommended based on your lifestyle and symptoms."
+      title="AI 产品匹配"
+      subtitle="根据你的生活方式与身体感受推荐适合的产品组合。"
       accentClass="shadow-[0_0_70px_rgba(0,194,255,0.12)]"
-      triggerLabel="Match Products"
+      triggerLabel="匹配产品"
       controls={
         <div className="flex flex-wrap gap-2">
           {symptomOptions.map((option) => (
@@ -39,8 +39,8 @@ export function AIProductMatcherCard({ profile }: { profile: DemoProfile }) {
     >
       <div className="space-y-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-            Symptoms
+          <div className="text-xs font-semibold tracking-[0.2em] text-white/45">
+            已选需求
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             {result.selectedSymptoms.map((item) => (
@@ -53,7 +53,7 @@ export function AIProductMatcherCard({ profile }: { profile: DemoProfile }) {
             ))}
           </div>
         </div>
-        <div className="text-lg font-bold text-white">Recommended Wellness Support</div>
+        <div className="text-lg font-bold text-white">推荐健康支持组合</div>
         <div className="grid gap-3">
           {result.items.map((item, index) => (
             <div
@@ -66,7 +66,7 @@ export function AIProductMatcherCard({ profile }: { profile: DemoProfile }) {
           ))}
         </div>
         <div className="rounded-[20px] border border-[#00C2FF]/16 bg-[#00C2FF]/10 px-4 py-3 text-sm text-white/80">
-          <span className="font-semibold">AI Explanation</span>
+          <span className="font-semibold">AI 说明</span>
           <div className="mt-1">{result.explanation}</div>
         </div>
       </div>

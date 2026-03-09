@@ -9,23 +9,23 @@ import {
 import { AIToolShell } from "@/components/ai-tools/ai-tool-shell";
 
 export function AIWorkoutBuilderCard({ profile }: { profile: DemoProfile }) {
-  const [focus, setFocus] = useState<(typeof workoutOptions)[number]>("Fatigue Relief");
+  const [focus, setFocus] = useState<(typeof workoutOptions)[number]>("缓解疲劳");
   const workout = getWorkoutPlan(profile.id, focus);
   const groups = [
-    ["Warm-up", workout.warmup],
-    ["Mobility", workout.mobility],
-    ["Lower Body", workout.lowerBody],
-    ["Circulation Boost", workout.circulationBoost],
-    ["Flexibility", workout.flexibility],
-    ["Cooldown", workout.cooldown],
+    ["热身", workout.warmup],
+    ["活动度", workout.mobility],
+    ["下肢激活", workout.lowerBody],
+    ["循环提升", workout.circulationBoost],
+    ["柔韧拉伸", workout.flexibility],
+    ["收操放松", workout.cooldown],
   ] as const;
 
   return (
     <AIToolShell
-      title="AI Workout Builder"
-      subtitle="Short recovery workouts based on your daily routine."
+      title="AI 训练生成器"
+      subtitle="根据你的日常节奏生成短时恢复训练。"
       accentClass="shadow-[0_0_70px_rgba(255,79,216,0.12)]"
-      triggerLabel="Build Workout"
+      triggerLabel="生成训练"
       controls={
         <div className="flex flex-wrap gap-2">
           {workoutOptions.map((option) => (
@@ -49,7 +49,7 @@ export function AIWorkoutBuilderCard({ profile }: { profile: DemoProfile }) {
         <div className="text-lg font-bold text-white">{workout.title}</div>
         {groups.map(([label, items]) => (
           <div key={label}>
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FF4FD8]">
+            <div className="text-sm font-semibold tracking-[0.2em] text-[#FF4FD8]">
               {label}
             </div>
             <div className="mt-2 grid gap-2">
@@ -65,7 +65,7 @@ export function AIWorkoutBuilderCard({ profile }: { profile: DemoProfile }) {
           </div>
         ))}
         <div className="rounded-[20px] border border-[#FF4FD8]/16 bg-[#FF4FD8]/10 px-4 py-3 text-sm text-white/80">
-          <span className="font-semibold">AI Insight</span>
+          <span className="font-semibold">AI 洞察</span>
           <div className="mt-1">{workout.insight}</div>
         </div>
       </div>

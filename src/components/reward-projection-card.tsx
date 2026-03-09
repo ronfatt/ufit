@@ -3,8 +3,8 @@ import { rewardProjection } from "@/data/mock-data";
 export function RewardProjectionCard() {
   return (
     <div className="glass-card rounded-[2rem] p-6">
-      <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-        REWARDS PROJECTION
+      <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+        奖励走势
       </div>
       <div className="mt-6 flex items-end gap-4">
         {rewardProjection.map((item) => (

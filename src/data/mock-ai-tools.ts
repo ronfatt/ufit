@@ -72,98 +72,91 @@ export const demoProfiles: DemoProfile[] = [
     id: "sarah",
     name: "Sarah Lim",
     age: 34,
-    lifestyle: "Office worker",
-    work: "Mostly desk-based work",
-    goal: "Better energy",
-    mainIssue: "Lower back discomfort",
+    lifestyle: "办公室工作",
+    work: "长期久坐工作",
+    goal: "提升能量",
+    mainIssue: "腰部不适",
     wellnessScore: 78,
     recommendation:
-      "Your recent profile suggests you may benefit from posture support, a lighter evening meal, and a simple office recovery plan.",
+      "你最近更适合做姿势支撑型日常计划、偏轻盈的晚餐结构，以及办公室恢复路线。",
     scoreBreakdown: {
       sleep: 74,
       activity: 77,
       nutrition: 76,
       recovery: 79,
-      insight:
-        "Improving posture breaks and hydration consistency may increase your wellness score next week.",
+      insight: "如果下周把补水和工作间隙活动做得更稳定，健康分数还有提升空间。",
     },
   },
   {
     id: "jason",
     name: "Jason Tan",
     age: 41,
-    lifestyle: "Retail Supervisor",
-    work: "9 hours standing",
-    goal: "Recovery + better energy",
-    mainIssue: "Tired legs + lower back discomfort",
+    lifestyle: "零售主管",
+    work: "每天站立工作 9 小时",
+    goal: "恢复 + 更稳定精力",
+    mainIssue: "腿部疲劳 + 腰部不适",
     wellnessScore: 72,
     recommendation:
-      "Your recent profile suggests you may benefit from a circulation-support routine, a lighter evening meal, and recovery wear after work.",
+      "你最近更适合做循环支持型日常计划、清爽一点的晚餐结构，以及下班后的恢复穿戴路线。",
     scoreBreakdown: {
       sleep: 68,
       activity: 74,
       nutrition: 71,
       recovery: 75,
-      insight:
-        "Improving sleep consistency and hydration may increase your wellness score next week.",
+      insight: "如果下周把睡眠稳定性和补水做得更好，健康分数有机会继续上升。",
     },
   },
   {
     id: "aina",
     name: "Aina",
     age: 29,
-    lifestyle: "Active lifestyle",
-    work: "Mix of work, movement, and light training",
-    goal: "General wellness",
-    mainIssue: "Poor sleep",
+    lifestyle: "活跃型生活方式",
+    work: "工作与轻运动并行",
+    goal: "整体健康",
+    mainIssue: "睡眠不佳",
     wellnessScore: 81,
     recommendation:
-      "Your recent profile suggests you may benefit from a sleep-focused evening routine, lighter cardio, and consistent recovery habits.",
+      "你最近更适合把睡前节奏、轻有氧和恢复习惯连成一套更稳定的日常流程。",
     scoreBreakdown: {
       sleep: 77,
       activity: 84,
       nutrition: 80,
       recovery: 83,
-      insight:
-        "Sleep hygiene consistency is the fastest way to improve your wellness score next week.",
+      insight: "维持睡前卫生习惯，会是你下周提升健康分数最快的一步。",
     },
   },
 ];
 
 export const dailyPlanOptions = [
-  "Office Worker",
-  "Long Standing",
-  "Low Energy",
-  "Poor Sleep",
+  "办公室工作",
+  "久站工作",
+  "低能量",
+  "睡眠不佳",
 ] as const;
 
 export const mealGoalOptions = [
-  "Weight Loss",
-  "Energy",
-  "Recovery",
-  "General Wellness",
+  "减重",
+  "能量",
+  "恢复",
+  "日常健康",
 ] as const;
 
-export const dietOptions = [
-  "Balanced",
-  "High Protein",
-  "Low Sugar",
-] as const;
+export const dietOptions = ["均衡", "高蛋白", "低糖"] as const;
 
 export const workoutOptions = [
-  "Beginner",
-  "Office Recovery",
-  "Fatigue Relief",
-  "Home Workout",
+  "新手",
+  "办公室恢复",
+  "缓解疲劳",
+  "居家训练",
 ] as const;
 
 export const symptomOptions = [
-  "Tired Legs",
-  "Lower Back Discomfort",
-  "Poor Circulation",
-  "Long Standing Hours",
-  "Long Hours Sitting",
-  "Muscle Recovery",
+  "腿部疲劳",
+  "腰部不适",
+  "循环较差",
+  "久站工时",
+  "久坐工时",
+  "运动恢复",
 ] as const;
 
 type DailyFocus = (typeof dailyPlanOptions)[number];
@@ -174,653 +167,413 @@ type Symptom = (typeof symptomOptions)[number];
 
 const dailyPlans: Record<DemoProfile["id"], Record<DailyFocus, DailyPlanOutput>> = {
   jason: {
-    "Office Worker": {
-      morning: [
-        "Drink 500ml water after waking",
-        "3-minute shoulder and calf stretch",
-        "Wear UFIT Daily Support Tee",
-      ],
-      midday: [
-        "Choose a balanced, high-protein lunch",
-        "Walk 8 minutes after lunch",
-        "Maintain hydration every hour",
-      ],
-      evening: [
-        "Light 15-minute walk after work",
-        "Perform 5-minute lower back stretch",
-        "Reduce heavy food at dinner",
-      ],
-      night: [
-        "Reduce screen time after 10:30 PM",
-        "Gentle breathing exercise before sleep",
-        "Target sleep time: before 11:30 PM",
-      ],
-      note:
-        "This routine is designed to support circulation, energy balance, and daily recovery.",
+    "办公室工作": {
+      morning: ["醒来 30 分钟内喝 500ml 水", "做 3 分钟小腿与肩颈舒展", "穿上 UFIT Daily Support Tee"],
+      midday: ["午餐优先高蛋白", "饭后步行 8 分钟", "每小时补一次水"],
+      evening: ["下班后慢走 15 分钟", "做 5 分钟腰部拉伸", "晚餐保持轻一点"],
+      night: ["10:30 后减少屏幕时间", "睡前做轻呼吸练习", "目标 11:30 前睡觉"],
+      note: "这套节奏主要用于支持循环舒适感、精力平衡和下班后的日常恢复。",
     },
-    "Long Standing": {
-      morning: [
-        "Drink 500ml water within 30 minutes of waking",
-        "3-minute calf stretch to activate circulation",
-        "Wear UFIT Infra Socks for all-day comfort support",
-      ],
-      midday: [
-        "Choose high-protein lunch (chicken / tofu / fish)",
-        "Walk 8 minutes after lunch to improve digestion",
-        "Maintain hydration every hour",
-      ],
-      evening: [
-        "Light 15-minute walk after work",
-        "Wear UFIT Recovery Legging to support recovery",
-        "Perform 5-minute lower back stretch",
-      ],
-      night: [
-        "Reduce screen time after 10:30 PM",
-        "Gentle breathing exercise before sleep",
-        "Target sleep time: before 11:30 PM",
-      ],
-      note:
-        "This routine is designed to support circulation, energy balance, and daily recovery.",
+    "久站工作": {
+      morning: ["醒来 30 分钟内喝 500ml 水", "做 3 分钟小腿拉伸启动循环", "穿上 UFIT Infra Socks"],
+      midday: ["午餐选择鸡肉 / 豆腐 / 鱼类这类高蛋白", "饭后步行 8 分钟帮助消化", "每小时维持补水"],
+      evening: ["下班后轻走 15 分钟", "穿上 UFIT Recovery Legging 做恢复", "做 5 分钟腰部拉伸"],
+      night: ["10:30 后减少屏幕时间", "睡前做轻呼吸练习", "目标 11:30 前睡觉"],
+      note: "这套计划主要用于支持循环、能量平衡和日常恢复。",
     },
-    "Low Energy": {
-      morning: [
-        "Drink 500ml water after waking",
-        "Eat a higher-protein breakfast",
-        "Wear UFIT Infra Socks for comfort during work hours",
-      ],
-      midday: [
-        "Keep lunch balanced and protein-focused",
-        "Walk 8 minutes after your meal",
-        "Avoid sugary drinks after lunch",
-      ],
-      evening: [
-        "Use UFIT Recovery Legging after work",
-        "Take a 12-minute slow walk",
-        "Do a 5-minute breathing reset",
-      ],
-      night: [
-        "Reduce caffeine after 5 PM",
-        "Lower screen brightness after 10 PM",
-        "Aim to sleep before 11:20 PM",
-      ],
-      note:
-        "This routine is designed to reduce afternoon fatigue and improve daily recovery support.",
+    "低能量": {
+      morning: ["醒来先补水 500ml", "早餐提高蛋白质比例", "穿上 UFIT Infra Socks 维持白天舒适感"],
+      midday: ["午餐保持均衡", "饭后步行 8 分钟", "下午避免高糖饮料"],
+      evening: ["下班后穿上 UFIT Recovery Legging", "慢走 12 分钟", "做 5 分钟放松呼吸"],
+      night: ["下午 5 点后减少咖啡因", "10 点后降低屏幕亮度", "目标 11:20 前睡觉"],
+      note: "这套节奏更适合下午 4 点后精力明显下滑的人。",
     },
-    "Poor Sleep": {
-      morning: [
-        "Get sunlight exposure within 20 minutes of waking",
-        "Drink 500ml water",
-        "Do 3 minutes of light mobility work",
-      ],
-      midday: [
-        "Choose balanced lunch with steady carbs",
-        "Avoid a second caffeine hit late in the day",
-        "Walk 8 minutes after lunch",
-      ],
-      evening: [
-        "Use UFIT Recovery Legging after work",
-        "Take a light 15-minute walk",
-        "Stretch calves and lower back",
-      ],
-      night: [
-        "Reduce screen time after 10 PM",
-        "Do gentle breathing exercise",
-        "Target sleep time: before 11:15 PM",
-      ],
-      note:
-        "This routine is designed to support recovery quality and better night-time habits.",
+    "睡眠不佳": {
+      morning: ["醒来后先晒自然光 10 分钟", "喝水后再喝咖啡", "做 3 分钟轻活动"],
+      midday: ["午餐保持均衡", "饭后步行 8 分钟", "下午尽量不再摄入刺激性饮品"],
+      evening: ["下班后先做恢复再吃晚餐", "轻走 15 分钟", "拉伸小腿和腰部"],
+      night: ["10 点后减少手机使用", "睡前做轻呼吸放松", "目标 11:15 前睡觉"],
+      note: "这套节奏更适合恢复质量不足、晚上不容易真正放松的人。",
     },
   },
   sarah: {
-    "Office Worker": {
-      morning: [
-        "Drink 500ml water after waking",
-        "5-minute light stretch",
-        "Wear UFIT Daily Support Tee",
-      ],
-      midday: [
-        "Choose a balanced lunch with protein",
-        "Walk 10 minutes after lunch",
-        "Refill your water bottle once before 3 PM",
-      ],
-      evening: [
-        "Use UFIT Wellness Waist Belt after work",
-        "Take a light 12-minute walk",
-        "Perform 5-minute lower back stretch",
-      ],
-      night: [
-        "Reduce screen time after 10:15 PM",
-        "Do gentle breathing exercise",
-        "Target sleep time: before 11:15 PM",
-      ],
-      note:
-        "This routine is designed to support posture, energy balance, and workday recovery.",
+    "办公室工作": {
+      morning: ["醒来后喝 500ml 水", "做 5 分钟轻伸展", "穿上 UFIT Daily Support Tee"],
+      midday: ["午餐保持高蛋白与蔬菜比例", "饭后步行 10 分钟", "下午补水 2 次"],
+      evening: ["下班后使用 UFIT Wellness Waist Belt", "轻走 12 分钟", "做 5 分钟腰部放松"],
+      night: ["10:15 后减少屏幕时间", "做轻呼吸练习", "目标 11:15 前入睡"],
+      note: "这套节奏更适合办公室用户做姿势支持与工作日恢复。",
     },
-    "Long Standing": {
-      morning: [
-        "Drink 500ml water after waking",
-        "3-minute calf stretch",
-        "Wear UFIT Infra Socks",
-      ],
-      midday: [
-        "Choose protein-focused lunch",
-        "Walk 8 minutes after eating",
-        "Hydrate every hour",
-      ],
-      evening: [
-        "Use UFIT Recovery Legging after work",
-        "Do a 5-minute lower back stretch",
-        "Take a light walk",
-      ],
-      night: [
-        "Reduce screen time after 10:30 PM",
-        "Do gentle breathing exercise",
-        "Sleep before 11:30 PM",
-      ],
-      note:
-        "This routine is designed to support circulation comfort and posture recovery.",
+    "久站工作": {
+      morning: ["起床喝 500ml 水", "做 3 分钟小腿拉伸", "穿上 UFIT Infra Socks"],
+      midday: ["午餐偏高蛋白", "饭后步行 8 分钟", "每小时补水"],
+      evening: ["下班后使用 UFIT Recovery Legging", "做 5 分钟腿后侧放松", "轻走 12 分钟"],
+      night: ["10:30 后减少屏幕时间", "睡前做轻呼吸练习", "目标 11:30 前睡觉"],
+      note: "这套节奏主要支持腿部舒适感与晚间恢复。",
     },
-    "Low Energy": {
-      morning: [
-        "Drink 500ml water after waking",
-        "Eat a protein-forward breakfast",
-        "Do 5 minutes of mobility work",
-      ],
-      midday: [
-        "Choose balanced lunch with steady carbs",
-        "Walk 8 minutes after lunch",
-        "Avoid sugary snacks before 4 PM",
-      ],
-      evening: [
-        "Take a light 15-minute walk",
-        "Use UFIT Daily Support Tee",
-        "Stretch lower back for 5 minutes",
-      ],
-      night: [
-        "Reduce caffeine after 5 PM",
-        "Slow down screen exposure",
-        "Target sleep before 11:15 PM",
-      ],
-      note:
-        "This routine is designed to support better energy regulation across the workday.",
+    "低能量": {
+      morning: ["醒来先补水", "早餐增加蛋白质", "做 5 分钟唤醒活动"],
+      midday: ["午餐减少精制糖", "饭后步行 10 分钟", "下午加一份酸奶或坚果"],
+      evening: ["轻活动 15 分钟", "晚餐更清爽", "减少晚间咖啡因"],
+      night: ["做呼吸放松", "提早 30 分钟进入休息状态", "目标 11:15 前睡觉"],
+      note: "这套节奏更适合办公日精力起伏较大的人。",
     },
-    "Poor Sleep": {
-      morning: [
-        "Get 10 minutes of daylight exposure",
-        "Drink water before coffee",
-        "Do a short mobility flow",
-      ],
-      midday: [
-        "Keep lunch balanced and not too heavy",
-        "Walk 8 minutes after eating",
-        "Avoid caffeine late in the day",
-      ],
-      evening: [
-        "Use UFIT Wellness Waist Belt for comfort",
-        "Take a light walk",
-        "Stretch before dinner",
-      ],
-      night: [
-        "Reduce screen time after 10 PM",
-        "Do gentle breathing exercise",
-        "Target sleep before 11 PM",
-      ],
-      note:
-        "This routine is designed to support better sleep hygiene and evening recovery.",
+    "睡眠不佳": {
+      morning: ["晒自然光 10 分钟", "先喝水再喝咖啡", "做 3 分钟舒展"],
+      midday: ["午餐不要太重", "饭后走 8 分钟", "下午 4 点后减少刺激饮品"],
+      evening: ["下班后做轻恢复", "尽量早点吃晚餐", "降低晚间刺激"],
+      night: ["10 点后减少屏幕", "做睡前卫生流程", "目标 11 点前睡觉"],
+      note: "这套节奏更适合提升睡眠稳定性和第二天的恢复感。",
     },
   },
   aina: {
-    "Office Worker": {
-      morning: [
-        "Drink 400ml water after waking",
-        "10-minute yoga flow",
-        "Wear UFIT Daily Support Tee",
-      ],
-      midday: [
-        "Choose a balanced lunch with protein",
-        "Walk 10 minutes after lunch",
-        "Keep hydration steady through the day",
-      ],
-      evening: [
-        "Do light cardio for 15 minutes",
-        "Stretch hips and lower back",
-        "Keep dinner lighter",
-      ],
-      night: [
-        "Reduce screen time after 10 PM",
-        "Follow a sleep hygiene routine",
-        "Target sleep before 11 PM",
-      ],
-      note:
-        "This routine is designed to support energy, movement quality, and better evening recovery.",
+    "办公室工作": {
+      morning: ["起床补水 400ml", "做 10 分钟瑜伽", "穿上 UFIT Daily Support Tee"],
+      midday: ["午餐均衡搭配蛋白质", "饭后步行 10 分钟", "维持补水频率"],
+      evening: ["做 15 分钟轻有氧", "拉伸髋部与腿后侧", "晚餐吃轻一点"],
+      night: ["10 点后减少屏幕时间", "做睡前放松流程", "目标 11 点前睡觉"],
+      note: "这套节奏更适合活跃型用户把精力和恢复做得更稳定。",
     },
-    "Long Standing": {
-      morning: [
-        "Drink 500ml water after waking",
-        "3-minute calf stretch",
-        "Wear UFIT Infra Socks",
-      ],
-      midday: [
-        "Choose high-protein lunch",
-        "Walk 8 minutes after lunch",
-        "Maintain hydration every hour",
-      ],
-      evening: [
-        "Use UFIT Recovery Legging after work",
-        "Take a light 15-minute walk",
-        "Stretch calves and hips",
-      ],
-      night: [
-        "Reduce screen time after 10:15 PM",
-        "Do gentle breathing exercise",
-        "Target sleep before 11:15 PM",
-      ],
-      note:
-        "This routine is designed to support circulation comfort and active recovery.",
+    "久站工作": {
+      morning: ["起床喝水 500ml", "做 3 分钟小腿拉伸", "穿上 UFIT Infra Socks"],
+      midday: ["午餐优先高蛋白", "饭后步行 8 分钟", "每小时补水"],
+      evening: ["下班后穿上 UFIT Recovery Legging", "做 15 分钟轻走", "拉伸小腿和髋部"],
+      night: ["10:15 后减少屏幕时间", "做轻呼吸放松", "目标 11:15 前睡觉"],
+      note: "这套节奏更适合活跃但白天身体负担偏高的人。",
     },
-    "Low Energy": {
-      morning: [
-        "Drink water after waking",
-        "10-minute yoga flow",
-        "Eat a balanced breakfast",
-      ],
-      midday: [
-        "Choose a protein-forward lunch",
-        "Walk 10 minutes after lunch",
-        "Avoid energy crashes from sugary snacks",
-      ],
-      evening: [
-        "Do light cardio for 15 minutes",
-        "Stretch for 5 minutes",
-        "Keep dinner light",
-      ],
-      night: [
-        "Reduce screen time after 10 PM",
-        "Follow a sleep hygiene routine",
-        "Target sleep before 11 PM",
-      ],
-      note:
-        "This routine is designed to support stable energy and better recovery habits.",
+    "低能量": {
+      morning: ["先喝水再活动", "做 10 分钟瑜伽", "吃完整早餐"],
+      midday: ["午餐保持均衡", "饭后步行 10 分钟", "避免甜食造成波动"],
+      evening: ["做轻有氧 15 分钟", "拉伸 5 分钟", "晚餐不过量"],
+      night: ["进入睡前卫生流程", "减少蓝光刺激", "目标 11 点前睡觉"],
+      note: "这套节奏更适合想把精力感做稳的人。",
     },
-    "Poor Sleep": {
-      morning: [
-        "Get natural light within 20 minutes of waking",
-        "Drink water before caffeine",
-        "Do 10 minutes of yoga",
-      ],
-      midday: [
-        "Choose balanced lunch",
-        "Walk 8 minutes after lunch",
-        "Avoid caffeine later in the afternoon",
-      ],
-      evening: [
-        "Do light cardio",
-        "Stretch for 5 minutes",
-        "Keep dinner easy to digest",
-      ],
-      night: [
-        "Follow a sleep hygiene routine",
-        "Reduce screen time after 10 PM",
-        "Target sleep before 11 PM",
-      ],
-      note:
-        "This routine is designed to support sleep consistency and daily recovery.",
+    "睡眠不佳": {
+      morning: ["起床 20 分钟内接触自然光", "补水后再摄入咖啡因", "做 10 分钟瑜伽"],
+      midday: ["午餐均衡", "饭后轻走 8 分钟", "下午尽量不再摄入刺激饮品"],
+      evening: ["做轻有氧", "进行 5 分钟拉伸", "晚餐清爽易消化"],
+      night: ["执行睡前卫生流程", "10 点后减少屏幕", "目标 11 点前睡觉"],
+      note: "这套节奏更适合把睡前放松和第二天恢复连起来。",
     },
   },
 };
 
 const mealPlans: Record<DemoProfile["id"], Record<MealGoal, Record<DietType, MealPlanOutput>>> = {
   jason: {
-    "Weight Loss": {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Grilled chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Handful of almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and muscle recovery.",
+    减重: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["烤鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["希腊酸奶", "一小把杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单有助于维持稳定精力与肌肉恢复。",
       },
-      "High Protein": {
-        breakfast: ["Oatmeal with banana", "3 boiled eggs", "Green tea"],
-        lunch: ["Grilled chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and muscle recovery.",
+      高蛋白: {
+        breakfast: ["燕麦配香蕉", "3 颗水煮蛋", "绿茶"],
+        lunch: ["烤鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["希腊酸奶", "杏仁"],
+        dinner: ["三文鱼", "地瓜", "沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单有助于维持稳定精力与恢复支持。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Oatmeal", "Unsweetened tea"],
-        lunch: ["Grilled chicken", "Vegetables", "Small portion brown rice"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and more even afternoon energy.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉", "蔬菜", "少量糙米"],
+        snack: ["希腊酸奶", "杏仁"],
+        dinner: ["豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单更适合减少下午精力波动。",
       },
     },
-    Energy: {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Grilled chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Handful of almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and muscle recovery.",
+    能量: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["烤鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["希腊酸奶", "一小把杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单有助于维持稳定精力与肌肉恢复。",
       },
-      "High Protein": {
-        breakfast: ["Oatmeal with banana", "3 boiled eggs", "Green tea"],
-        lunch: ["Chicken breast", "Brown rice", "Vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and recovery-focused wellness habits.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "希腊酸奶", "水果"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["高蛋白酸奶", "杏仁"],
+        dinner: ["三文鱼", "地瓜", "沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单适合久站工作后的能量与恢复需求。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened oatmeal", "Green tea"],
-        lunch: ["Chicken breast", "Vegetables", "Small portion brown rice"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy with fewer late-day energy crashes.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "绿茶"],
+        lunch: ["鸡肉", "蔬菜", "少量全谷类"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["豆腐", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单更适合稳定下午精力。",
       },
     },
-    Recovery: {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Grilled chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Handful of almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and muscle recovery.",
+    恢复: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["烤鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["希腊酸奶", "一小把杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单有助于维持稳定精力与肌肉恢复。",
       },
-      "High Protein": {
-        breakfast: ["Eggs", "Greek yogurt", "Banana"],
-        lunch: ["Chicken breast", "Brown rice", "Vegetables"],
-        snack: ["Almonds", "Greek yogurt"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports steady energy and recovery-focused wellness habits.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "高蛋白酸奶", "水果"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["杏仁", "酸奶"],
+        dinner: ["三文鱼", "地瓜", "沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单更适合下班后恢复与肌肉支持。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened yogurt", "Tea"],
-        lunch: ["Chicken", "Vegetables", "Small brown rice"],
-        snack: ["Almonds", "Greek yogurt"],
-        dinner: ["Tofu", "Salad", "Sweet potato"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports recovery without heavy evening meals.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖酸奶", "茶"],
+        lunch: ["鸡肉", "蔬菜", "少量粗粮"],
+        snack: ["坚果", "酸奶"],
+        dinner: ["豆腐", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单适合晚餐不想太重但又希望有恢复感的人。",
       },
     },
-    "General Wellness": {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Grilled chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Handful of almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports balanced daily wellness habits.",
+    日常健康: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["烤鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["希腊酸奶", "一小把杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单适合作为可长期坚持的均衡版本。",
       },
-      "High Protein": {
-        breakfast: ["Eggs", "Greek yogurt", "Fruit"],
-        lunch: ["Chicken breast", "Brown rice", "Vegetables"],
-        snack: ["Almonds", "Greek yogurt"],
-        dinner: ["Salmon", "Salad", "Sweet potato"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports balanced energy and recovery.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "高蛋白酸奶", "水果"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["杏仁", "酸奶"],
+        dinner: ["三文鱼", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单适合把恢复和饱腹感一起兼顾。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened oatmeal", "Tea"],
-        lunch: ["Chicken breast", "Vegetables", "Small portion rice"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu", "Salad", "Sweet potato"],
-        hydrationGoal: "2.2 liters water throughout the day",
-        insight:
-          "This meal plan supports a steadier daily energy profile.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉", "蔬菜", "少量糙米"],
+        snack: ["希腊酸奶", "杏仁"],
+        dinner: ["豆腐", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.2 升水",
+        insight: "这份餐单有助于保持更平稳的日常状态。",
       },
     },
   },
   sarah: {
-    "Weight Loss": {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Grilled chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu or salmon", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports lighter daily eating and steady office energy.",
+    减重: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["烤鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["希腊酸奶", "杏仁"],
+        dinner: ["豆腐或三文鱼", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合办公室日常的轻负担节奏。",
       },
-      "High Protein": {
-        breakfast: ["Greek yogurt", "2 boiled eggs", "Berries"],
-        lunch: ["Chicken breast", "Vegetables", "Brown rice"],
-        snack: ["Almonds", "Greek yogurt"],
-        dinner: ["Salmon", "Mixed salad", "Sweet potato"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports satiety and workday recovery.",
+      高蛋白: {
+        breakfast: ["希腊酸奶", "鸡蛋", "水果"],
+        lunch: ["鸡胸肉", "蔬菜", "糙米"],
+        snack: ["杏仁", "酸奶"],
+        dinner: ["三文鱼", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合保持饱腹感与工作后恢复。",
       },
-      "Low Sugar": {
-        breakfast: ["Boiled eggs", "Unsweetened oatmeal", "Tea"],
-        lunch: ["Chicken salad", "Small brown rice"],
-        snack: ["Greek yogurt", "Nuts"],
-        dinner: ["Tofu", "Vegetables", "Soup"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports more stable focus and less afternoon heaviness.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉沙拉", "少量糙米"],
+        snack: ["酸奶", "坚果"],
+        dinner: ["豆腐", "蔬菜", "汤品"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合减少下午沉重感。",
       },
     },
-    Energy: {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports better daytime energy and workday recovery.",
+    能量: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["希腊酸奶", "杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单适合工作日维持稳定能量。",
       },
-      "High Protein": {
-        breakfast: ["Eggs", "Greek yogurt", "Fruit"],
-        lunch: ["Chicken breast", "Brown rice", "Vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon", "Salad", "Sweet potato"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports steadier energy and posture recovery.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "希腊酸奶", "水果"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["坚果", "酸奶"],
+        dinner: ["三文鱼", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合办公室恢复和姿势支持用户。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened oatmeal", "Tea"],
-        lunch: ["Chicken", "Vegetables", "Small brown rice"],
-        snack: ["Nuts", "Greek yogurt"],
-        dinner: ["Tofu", "Salad", "Soup"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports more even energy through the afternoon.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉", "蔬菜", "少量糙米"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["豆腐", "蔬菜", "汤品"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合减少下午精力下滑。",
       },
     },
-    Recovery: {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports daily recovery and better after-work comfort.",
+    恢复: {
+      均衡: {
+        breakfast: ["燕麦", "鸡蛋", "水果"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合工作后身体恢复与舒适感支持。",
       },
-      "High Protein": {
-        breakfast: ["Eggs", "Greek yogurt", "Fruit"],
-        lunch: ["Chicken breast", "Brown rice", "Vegetables"],
-        snack: ["Greek yogurt", "Nuts"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports posture and recovery-focused wellness habits.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "高蛋白酸奶", "水果"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["坚果", "酸奶"],
+        dinner: ["三文鱼", "地瓜", "沙拉"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单适合恢复导向与饱腹感并行。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Tea", "Unsweetened yogurt"],
-        lunch: ["Chicken salad", "Small rice portion"],
-        snack: ["Nuts", "Greek yogurt"],
-        dinner: ["Tofu", "Vegetables", "Soup"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports recovery with a lighter evening structure.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖酸奶", "茶"],
+        lunch: ["鸡肉沙拉", "少量粗粮"],
+        snack: ["坚果", "酸奶"],
+        dinner: ["豆腐", "蔬菜", "汤品"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单适合晚餐偏轻的恢复节奏。",
       },
     },
-    "General Wellness": {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Chicken breast", "Brown rice", "Vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports balanced daily wellness habits.",
+    日常健康: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单适合作为长期可坚持的均衡版本。",
       },
-      "High Protein": {
-        breakfast: ["Eggs", "Greek yogurt", "Fruit"],
-        lunch: ["Chicken breast", "Brown rice", "Vegetables"],
-        snack: ["Nuts", "Greek yogurt"],
-        dinner: ["Salmon", "Salad", "Sweet potato"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports daily structure and recovery.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "希腊酸奶", "水果"],
+        lunch: ["鸡胸肉", "糙米", "蔬菜"],
+        snack: ["杏仁", "酸奶"],
+        dinner: ["三文鱼", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合想让饮食更有结构感的人。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened oatmeal", "Tea"],
-        lunch: ["Chicken", "Vegetables", "Small rice portion"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu", "Salad", "Soup"],
-        hydrationGoal: "2.1 liters water throughout the day",
-        insight:
-          "This meal plan supports better focus and lighter late-day eating.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉", "蔬菜", "少量糙米"],
+        snack: ["酸奶", "坚果"],
+        dinner: ["豆腐", "汤品", "蔬菜"],
+        hydrationGoal: "全天 2.1 升水",
+        insight: "这份餐单更适合控制能量波动。",
       },
     },
   },
   aina: {
-    "Weight Loss": {
-      Balanced: {
-        breakfast: ["Overnight oats", "Greek yogurt", "Green tea"],
-        lunch: ["Chicken salad bowl", "Brown rice", "Vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu or salmon", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports lighter eating and active daily recovery.",
+    减重: {
+      均衡: {
+        breakfast: ["隔夜燕麦", "希腊酸奶", "绿茶"],
+        lunch: ["鸡肉沙拉碗", "糙米", "蔬菜"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["豆腐或三文鱼", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单适合活跃型用户做轻盈饮食。",
       },
-      "High Protein": {
-        breakfast: ["Greek yogurt", "Eggs", "Fruit"],
-        lunch: ["Chicken breast", "Quinoa", "Vegetables"],
-        snack: ["Protein yogurt", "Almonds"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports active recovery and stable energy.",
+      高蛋白: {
+        breakfast: ["酸奶", "鸡蛋", "水果"],
+        lunch: ["鸡胸肉", "藜麦", "蔬菜"],
+        snack: ["高蛋白酸奶", "杏仁"],
+        dinner: ["三文鱼", "地瓜", "沙拉"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单更适合训练后的恢复支持。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened oats", "Tea"],
-        lunch: ["Chicken salad", "Small rice portion"],
-        snack: ["Nuts", "Greek yogurt"],
-        dinner: ["Tofu", "Vegetables", "Soup"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports better sleep and a lighter evening profile.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉沙拉", "少量糙米"],
+        snack: ["坚果", "酸奶"],
+        dinner: ["豆腐", "蔬菜", "汤品"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单更适合晚间想吃得轻一点的人。",
       },
     },
-    Energy: {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and active recovery.",
+    能量: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单适合活跃型用户维持稳定精力。",
       },
-      "High Protein": {
-        breakfast: ["Eggs", "Greek yogurt", "Fruit"],
-        lunch: ["Chicken breast", "Quinoa", "Vegetables"],
-        snack: ["Protein yogurt", "Almonds"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy and recovery-focused wellness habits.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "高蛋白酸奶", "水果"],
+        lunch: ["鸡胸肉", "藜麦", "蔬菜"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["三文鱼", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单适合恢复和能量管理同时进行。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened oatmeal", "Tea"],
-        lunch: ["Chicken salad", "Small brown rice"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu", "Vegetables", "Soup"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports steady energy and lighter evenings.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉", "蔬菜", "少量糙米"],
+        snack: ["酸奶", "坚果"],
+        dinner: ["豆腐", "沙拉", "汤品"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单更适合把晚间负担降下来。",
       },
     },
-    Recovery: {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and muscle recovery.",
+    恢复: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单适合训练后恢复与日常舒适感。",
       },
-      "High Protein": {
-        breakfast: ["Greek yogurt", "Eggs", "Fruit"],
-        lunch: ["Chicken breast", "Quinoa", "Vegetables"],
-        snack: ["Protein yogurt", "Almonds"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports stable energy levels and muscle recovery.",
+      高蛋白: {
+        breakfast: ["高蛋白酸奶", "鸡蛋", "水果"],
+        lunch: ["鸡胸肉", "藜麦", "蔬菜"],
+        snack: ["杏仁", "酸奶"],
+        dinner: ["三文鱼", "地瓜", "沙拉"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单更适合把恢复感做得更稳。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Tea", "Unsweetened oats"],
-        lunch: ["Chicken salad", "Small rice portion"],
-        snack: ["Nuts", "Greek yogurt"],
-        dinner: ["Tofu", "Vegetables", "Soup"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports recovery with a sleep-friendly evening structure.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖酸奶", "茶"],
+        lunch: ["鸡肉沙拉", "少量糙米"],
+        snack: ["坚果", "酸奶"],
+        dinner: ["豆腐", "蔬菜", "汤品"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单更适合晚间恢复和睡前轻盈感。",
       },
     },
-    "General Wellness": {
-      Balanced: {
-        breakfast: ["Oatmeal with banana", "2 boiled eggs", "Green tea"],
-        lunch: ["Chicken breast", "Brown rice", "Steamed vegetables"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Salmon or tofu", "Sweet potato", "Mixed salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports balanced energy and active wellness habits.",
+    日常健康: {
+      均衡: {
+        breakfast: ["燕麦配香蕉", "2 颗水煮蛋", "绿茶"],
+        lunch: ["鸡胸肉", "糙米", "蒸蔬菜"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["三文鱼或豆腐", "地瓜", "综合沙拉"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单适合作为日常健康版本长期使用。",
       },
-      "High Protein": {
-        breakfast: ["Eggs", "Greek yogurt", "Fruit"],
-        lunch: ["Chicken breast", "Quinoa", "Vegetables"],
-        snack: ["Protein yogurt", "Almonds"],
-        dinner: ["Salmon", "Sweet potato", "Salad"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports balanced recovery and energy.",
+      高蛋白: {
+        breakfast: ["鸡蛋", "高蛋白酸奶", "水果"],
+        lunch: ["鸡胸肉", "藜麦", "蔬菜"],
+        snack: ["杏仁", "酸奶"],
+        dinner: ["三文鱼", "沙拉", "地瓜"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单适合恢复和活力管理并行。",
       },
-      "Low Sugar": {
-        breakfast: ["Eggs", "Unsweetened oatmeal", "Tea"],
-        lunch: ["Chicken salad", "Small rice portion"],
-        snack: ["Greek yogurt", "Almonds"],
-        dinner: ["Tofu", "Vegetables", "Soup"],
-        hydrationGoal: "2.3 liters water throughout the day",
-        insight:
-          "This meal plan supports lighter evenings and steady daily wellness.",
+      低糖: {
+        breakfast: ["鸡蛋", "无糖燕麦", "茶"],
+        lunch: ["鸡肉", "蔬菜", "少量糙米"],
+        snack: ["酸奶", "杏仁"],
+        dinner: ["豆腐", "沙拉", "汤品"],
+        hydrationGoal: "全天 2.3 升水",
+        insight: "这份餐单适合保持更轻的晚间状态。",
       },
     },
   },
@@ -828,495 +581,286 @@ const mealPlans: Record<DemoProfile["id"], Record<MealGoal, Record<DietType, Mea
 
 const workoutPlans: Record<DemoProfile["id"], Record<WorkoutFocus, WorkoutPlanOutput>> = {
   jason: {
-    Beginner: {
-      title: "15-Minute Recovery Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 2 min"],
-      circulationBoost: ["Light walking in place — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 3 min"],
-      insight:
-        "This workout is optimized for users with long standing hours and muscle fatigue.",
+    新手: {
+      title: "15 分钟恢复训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 2 分钟"],
+      circulationBoost: ["原地轻走 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["深呼吸放松 — 3 分钟"],
+      insight: "这组训练更适合长时间站立和肌肉疲劳的人。",
     },
-    "Office Recovery": {
-      title: "12-Minute Desk Reset Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Chair squats — 2 min"],
-      circulationBoost: ["Marching in place — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 2 min"],
-      insight:
-        "This workout is optimized for users with long sitting hours and low daily mobility.",
+    办公室恢复: {
+      title: "12 分钟办公恢复训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["椅旁深蹲 — 2 分钟"],
+      circulationBoost: ["原地踏步 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["呼吸放松 — 2 分钟"],
+      insight: "这组训练更适合久坐和低活动量的人。",
     },
-    "Fatigue Relief": {
-      title: "15-Minute Recovery Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 2 min"],
-      circulationBoost: ["Light walking in place — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 3 min"],
-      insight:
-        "This workout is optimized for users with long standing hours and muscle fatigue.",
+    缓解疲劳: {
+      title: "15 分钟恢复训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 2 分钟"],
+      circulationBoost: ["原地轻走 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["深呼吸放松 — 3 分钟"],
+      insight: "这组训练主要用于缓解久站后的疲劳感。",
     },
-    "Home Workout": {
-      title: "16-Minute Home Recovery Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 3 min"],
-      circulationBoost: ["Marching in place — 3 min"],
-      flexibility: ["Hamstring stretch — 3 min"],
-      cooldown: ["Deep breathing — 4 min"],
-      insight:
-        "This workout is optimized for users who want simple recovery at home.",
+    居家训练: {
+      title: "16 分钟居家恢复训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 3 分钟"],
+      circulationBoost: ["原地轻走 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 3 分钟"],
+      cooldown: ["深呼吸放松 — 4 分钟"],
+      insight: "这组训练适合在家完成的轻恢复路线。",
     },
   },
   sarah: {
-    Beginner: {
-      title: "14-Minute Office Recovery Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Chair squats — 2 min"],
-      circulationBoost: ["Walking in place — 3 min"],
-      flexibility: ["Lower-back stretch — 2 min"],
-      cooldown: ["Deep breathing — 4 min"],
-      insight:
-        "This workout is optimized for office workers with lower back discomfort.",
+    新手: {
+      title: "14 分钟办公室恢复训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["椅旁深蹲 — 2 分钟"],
+      circulationBoost: ["原地走动 — 3 分钟"],
+      flexibility: ["腰部拉伸 — 2 分钟"],
+      cooldown: ["呼吸放松 — 4 分钟"],
+      insight: "这组训练更适合办公室用户和腰部不适场景。",
     },
-    "Office Recovery": {
-      title: "14-Minute Office Recovery Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Chair squats — 2 min"],
-      circulationBoost: ["Walking in place — 3 min"],
-      flexibility: ["Lower-back stretch — 2 min"],
-      cooldown: ["Deep breathing — 4 min"],
-      insight:
-        "This workout is optimized for office workers with lower back discomfort.",
+    办公室恢复: {
+      title: "14 分钟办公室恢复训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["椅旁深蹲 — 2 分钟"],
+      circulationBoost: ["原地走动 — 3 分钟"],
+      flexibility: ["腰部拉伸 — 2 分钟"],
+      cooldown: ["呼吸放松 — 4 分钟"],
+      insight: "这组训练主要用于工作后的姿势恢复。",
     },
-    "Fatigue Relief": {
-      title: "13-Minute Energy Reset Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 2 min"],
-      circulationBoost: ["Walking in place — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 3 min"],
-      insight:
-        "This workout is optimized for users with desk fatigue and low energy.",
+    缓解疲劳: {
+      title: "13 分钟能量重启训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 2 分钟"],
+      circulationBoost: ["原地走动 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["深呼吸 — 3 分钟"],
+      insight: "这组训练更适合工作日下午精力下滑的人。",
     },
-    "Home Workout": {
-      title: "16-Minute Home Recovery Workout",
-      warmup: ["Neck stretch — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 3 min"],
-      circulationBoost: ["Walking in place — 3 min"],
-      flexibility: ["Lower-back stretch — 3 min"],
-      cooldown: ["Deep breathing — 4 min"],
-      insight:
-        "This workout is optimized for gentle home recovery and posture support.",
+    居家训练: {
+      title: "16 分钟居家恢复训练",
+      warmup: ["颈部伸展 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 3 分钟"],
+      circulationBoost: ["原地轻走 — 3 分钟"],
+      flexibility: ["腰部拉伸 — 3 分钟"],
+      cooldown: ["呼吸放松 — 4 分钟"],
+      insight: "这组训练适合在家做轻恢复和姿势支持。",
     },
   },
   aina: {
-    Beginner: {
-      title: "15-Minute Light Cardio Flow",
-      warmup: ["Breathing reset — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 2 min"],
-      circulationBoost: ["Light cardio march — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 3 min"],
-      insight:
-        "This workout is optimized for active users who want lighter recovery support.",
+    新手: {
+      title: "15 分钟轻有氧流程",
+      warmup: ["呼吸启动 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 2 分钟"],
+      circulationBoost: ["轻有氧踏步 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["深呼吸放松 — 3 分钟"],
+      insight: "这组训练更适合活跃型用户做轻恢复。",
     },
-    "Office Recovery": {
-      title: "13-Minute Desk Reset Workout",
-      warmup: ["Breathing reset — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 2 min"],
-      circulationBoost: ["Walking in place — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 3 min"],
-      insight:
-        "This workout is optimized for users who need a simple posture and mobility reset.",
+    办公室恢复: {
+      title: "13 分钟久坐恢复训练",
+      warmup: ["呼吸启动 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 2 分钟"],
+      circulationBoost: ["原地轻走 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["呼吸放松 — 3 分钟"],
+      insight: "这组训练适合久坐后恢复活动度。",
     },
-    "Fatigue Relief": {
-      title: "15-Minute Recovery Workout",
-      warmup: ["Breathing reset — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 2 min"],
-      circulationBoost: ["Light walking in place — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 3 min"],
-      insight:
-        "This workout is optimized for light fatigue relief and recovery.",
+    缓解疲劳: {
+      title: "15 分钟轻恢复训练",
+      warmup: ["呼吸启动 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 2 分钟"],
+      circulationBoost: ["原地轻走 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["深呼吸放松 — 3 分钟"],
+      insight: "这组训练适合轻疲劳和恢复导向场景。",
     },
-    "Home Workout": {
-      title: "15-Minute Home Wellness Flow",
-      warmup: ["Breathing reset — 1 min"],
-      mobility: ["Shoulder rolls — 2 min"],
-      lowerBody: ["Bodyweight squats — 2 min"],
-      circulationBoost: ["Light cardio march — 3 min"],
-      flexibility: ["Hamstring stretch — 2 min"],
-      cooldown: ["Deep breathing — 3 min"],
-      insight:
-        "This workout is optimized for light cardio and home wellness support.",
+    居家训练: {
+      title: "15 分钟居家健康流程",
+      warmup: ["呼吸启动 — 1 分钟"],
+      mobility: ["肩部环绕 — 2 分钟"],
+      lowerBody: ["徒手深蹲 — 2 分钟"],
+      circulationBoost: ["轻有氧踏步 — 3 分钟"],
+      flexibility: ["腿后侧拉伸 — 2 分钟"],
+      cooldown: ["深呼吸放松 — 3 分钟"],
+      insight: "这组训练适合在家维持轻有氧与恢复感。",
     },
   },
 };
 
 const productMatches: Record<DemoProfile["id"], Record<Symptom, ProductMatchOutput>> = {
   jason: {
-    "Tired Legs": {
-      selectedSymptoms: [
-        "Tired Legs",
-        "Lower Back Discomfort",
-        "Long Standing Hours",
-      ],
+    腿部疲劳: {
+      selectedSymptoms: ["腿部疲劳", "腰部不适", "久站工时"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports daily comfort for people who stand long hours.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce foot fatigue and promotes circulation comfort.",
-        },
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Provides additional lower-back support during long work shifts.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合长时间站立后的日常舒适与恢复支持。" },
+        { name: "UFIT Infra Socks", description: "有助于减轻脚部疲劳并支持循环舒适感。" },
+        { name: "UFIT Wellness Waist Belt", description: "适合长时间工作时补充腰部支撑。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support daily recovery and circulation comfort.",
+      explanation: "根据你的生活方式画像，这组产品更适合支持日常恢复和循环舒适感。",
     },
-    "Lower Back Discomfort": {
-      selectedSymptoms: [
-        "Tired Legs",
-        "Lower Back Discomfort",
-        "Long Standing Hours",
-      ],
+    腰部不适: {
+      selectedSymptoms: ["腿部疲劳", "腰部不适", "久站工时"],
       items: [
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Provides additional lower-back support during long work shifts.",
-        },
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports daily comfort for people who stand long hours.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce foot fatigue and promotes circulation comfort.",
-        },
+        { name: "UFIT Wellness Waist Belt", description: "适合长工时下的腰部舒适支持。" },
+        { name: "UFIT Recovery Legging", description: "适合下班后的恢复路线。" },
+        { name: "UFIT Infra Socks", description: "适合脚部疲劳与循环舒适支持。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support daily recovery and lower-back comfort.",
+      explanation: "根据你的生活方式画像，这组产品更适合腰部舒适与下班后恢复。",
     },
-    "Poor Circulation": {
-      selectedSymptoms: [
-        "Tired Legs",
-        "Poor Circulation",
-        "Long Standing Hours",
-      ],
+    循环较差: {
+      selectedSymptoms: ["腿部疲劳", "循环较差", "久站工时"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports circulation-focused daily wear and post-work comfort.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce foot fatigue and promotes circulation comfort.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合循环支持与日常恢复穿戴。" },
+        { name: "UFIT Infra Socks", description: "适合脚部舒适和循环支持场景。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support circulation comfort and daily recovery.",
+      explanation: "根据你的生活方式画像，这组产品更适合循环舒适与恢复支持。",
     },
-    "Long Standing Hours": {
-      selectedSymptoms: [
-        "Tired Legs",
-        "Lower Back Discomfort",
-        "Long Standing Hours",
-      ],
+    久站工时: {
+      selectedSymptoms: ["腿部疲劳", "腰部不适", "久站工时"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports daily comfort for people who stand long hours.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce foot fatigue and promotes circulation comfort.",
-        },
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Provides additional lower-back support during long work shifts.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合长时间站立后的日常舒适与恢复支持。" },
+        { name: "UFIT Infra Socks", description: "有助于减轻脚部疲劳并支持循环舒适感。" },
+        { name: "UFIT Wellness Waist Belt", description: "适合长时间工作时补充腰部支撑。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support daily recovery and circulation comfort.",
+      explanation: "根据你的生活方式画像，这组产品更适合支持日常恢复和循环舒适感。",
     },
-    "Long Hours Sitting": {
-      selectedSymptoms: [
-        "Lower Back Discomfort",
-        "Long Hours Sitting",
-      ],
+    久坐工时: {
+      selectedSymptoms: ["腰部不适", "久坐工时"],
       items: [
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Supports lower-back comfort during extended desk time.",
-        },
-        {
-          name: "UFIT Daily Support Tee",
-          description:
-            "Adds light posture-friendly support for everyday wear.",
-        },
+        { name: "UFIT Wellness Waist Belt", description: "适合久坐后的腰部舒适支持。" },
+        { name: "UFIT Daily Support Tee", description: "适合作为日常轻支撑穿着。" },
       ],
-      explanation:
-        "Based on your selected needs, this combination may support posture comfort and daily recovery.",
+      explanation: "根据你选择的状态，这组产品更适合姿势支持与日常舒适感。",
     },
-    "Muscle Recovery": {
-      selectedSymptoms: ["Muscle Recovery", "Tired Legs"],
+    运动恢复: {
+      selectedSymptoms: ["运动恢复", "腿部疲劳"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports recovery-focused comfort after long work hours.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Adds foot and lower-leg comfort after standing-heavy days.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合恢复导向场景和下班后放松。" },
+        { name: "UFIT Infra Socks", description: "适合腿脚舒适感和轻恢复路线。" },
       ],
-      explanation:
-        "Based on your selected needs, this combination may support muscle recovery and daily comfort.",
+      explanation: "根据你选择的状态，这组产品更适合作为恢复型搭配。",
     },
   },
   sarah: {
-    "Tired Legs": {
-      selectedSymptoms: ["Tired Legs", "Office Recovery"],
+    腿部疲劳: {
+      selectedSymptoms: ["腿部疲劳", "办公室恢复"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports daily comfort when sitting all day still creates leg fatigue.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Adds lower-leg comfort and circulation-friendly support.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合久坐后依然出现腿部疲劳的人。" },
+        { name: "UFIT Infra Socks", description: "适合下肢舒适和循环支持。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support desk-day recovery and comfort.",
+      explanation: "根据你的生活方式画像，这组产品更适合办公室后的恢复感。",
     },
-    "Lower Back Discomfort": {
-      selectedSymptoms: ["Lower Back Discomfort", "Office Worker"],
+    腰部不适: {
+      selectedSymptoms: ["腰部不适", "办公室工作"],
       items: [
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Provides lower-back support during long desk sessions.",
-        },
-        {
-          name: "UFIT Daily Support Tee",
-          description:
-            "Adds light daily support for office wear and posture comfort.",
-        },
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports after-work recovery and lower-body comfort.",
-        },
+        { name: "UFIT Wellness Waist Belt", description: "适合长时间办公时的腰部舒适支持。" },
+        { name: "UFIT Daily Support Tee", description: "适合作为日常姿势与穿着支持。" },
+        { name: "UFIT Recovery Legging", description: "适合下班后做恢复延伸。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support lower-back comfort and daily recovery.",
+      explanation: "根据你的生活方式画像，这组产品更适合腰部舒适与日常恢复。",
     },
-    "Poor Circulation": {
-      selectedSymptoms: ["Poor Circulation", "Office Worker"],
+    循环较差: {
+      selectedSymptoms: ["循环较差", "办公室工作"],
       items: [
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce foot fatigue and circulation discomfort.",
-        },
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports circulation-focused comfort after work.",
-        },
+        { name: "UFIT Infra Socks", description: "适合脚部疲劳与循环舒适支持。" },
+        { name: "UFIT Recovery Legging", description: "适合作为下班后的恢复穿戴。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support circulation comfort and easier recovery.",
+      explanation: "根据你的生活方式画像，这组产品更适合循环舒适和轻恢复。",
     },
-    "Long Standing Hours": {
-      selectedSymptoms: ["Tired Legs", "Long Standing Hours"],
+    久站工时: {
+      selectedSymptoms: ["腿部疲劳", "久站工时"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports comfort during long standing hours.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce foot fatigue during longer shifts.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合站立工作后的恢复场景。" },
+        { name: "UFIT Infra Socks", description: "适合长工时下的腿脚舒适支持。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support standing-day comfort.",
+      explanation: "根据你选择的状态，这组产品更适合站立场景和恢复感。",
     },
-    "Long Hours Sitting": {
-      selectedSymptoms: ["Lower Back Discomfort", "Long Hours Sitting"],
+    久坐工时: {
+      selectedSymptoms: ["腰部不适", "久坐工时"],
       items: [
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Provides lower-back support during desk work.",
-        },
-        {
-          name: "UFIT Daily Support Tee",
-          description:
-            "Adds posture-friendly comfort for daily wear.",
-        },
+        { name: "UFIT Wellness Waist Belt", description: "适合桌面工作下的腰部支撑。" },
+        { name: "UFIT Daily Support Tee", description: "适合作为日常轻支撑穿搭。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support posture and lower-back comfort.",
+      explanation: "根据你选择的状态，这组产品更适合姿势支持和办公室场景。",
     },
-    "Muscle Recovery": {
-      selectedSymptoms: ["Muscle Recovery", "General Wellness"],
+    运动恢复: {
+      selectedSymptoms: ["运动恢复", "日常健康"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports recovery-focused comfort after daily work.",
-        },
-        {
-          name: "UFIT Daily Support Tee",
-          description:
-            "Adds comfortable daily support for active routines.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合轻恢复和下班后放松。" },
+        { name: "UFIT Daily Support Tee", description: "适合把舒适穿搭纳入健康路线。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support lighter recovery and comfort.",
+      explanation: "根据你选择的状态，这组产品更适合作为轻恢复组合。",
     },
   },
   aina: {
-    "Tired Legs": {
-      selectedSymptoms: ["Tired Legs", "Active Lifestyle"],
+    腿部疲劳: {
+      selectedSymptoms: ["腿部疲劳", "活跃生活方式"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports active recovery after movement-heavy days.",
-        },
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce lower-leg fatigue and daily foot discomfort.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合活跃型用户的轻恢复需求。" },
+        { name: "UFIT Infra Socks", description: "适合腿脚疲劳和舒适支持。" },
       ],
-      explanation:
-        "Based on your lifestyle profile, these products may support light recovery and comfort.",
+      explanation: "根据你的生活方式画像，这组产品更适合活动后的轻恢复。",
     },
-    "Lower Back Discomfort": {
-      selectedSymptoms: ["Lower Back Discomfort", "Active Lifestyle"],
+    腰部不适: {
+      selectedSymptoms: ["腰部不适", "活跃生活方式"],
       items: [
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Provides added lower-back comfort during work and movement.",
-        },
-        {
-          name: "UFIT Daily Support Tee",
-          description:
-            "Adds a more comfortable support feel for everyday wear.",
-        },
+        { name: "UFIT Wellness Waist Belt", description: "适合作为腰部舒适支撑。" },
+        { name: "UFIT Daily Support Tee", description: "适合日常轻支撑和舒适穿着。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support lower-back comfort and light recovery.",
+      explanation: "根据你选择的状态，这组产品更适合作为腰部舒适与恢复支持。",
     },
-    "Poor Circulation": {
-      selectedSymptoms: ["Poor Circulation", "Active Lifestyle"],
+    循环较差: {
+      selectedSymptoms: ["循环较差", "活跃生活方式"],
       items: [
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Supports lower-leg and foot comfort throughout the day.",
-        },
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports circulation-focused daily wear and recovery.",
-        },
+        { name: "UFIT Infra Socks", description: "适合腿脚舒适和循环支持。" },
+        { name: "UFIT Recovery Legging", description: "适合作为恢复导向穿戴。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support circulation comfort and active recovery.",
+      explanation: "根据你选择的状态，这组产品更适合循环舒适和恢复感。",
     },
-    "Long Standing Hours": {
-      selectedSymptoms: ["Tired Legs", "Long Standing Hours"],
+    久站工时: {
+      selectedSymptoms: ["腿部疲劳", "久站工时"],
       items: [
-        {
-          name: "UFIT Infra Socks",
-          description:
-            "Helps reduce foot fatigue and supports standing comfort.",
-        },
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports post-activity and post-work recovery comfort.",
-        },
+        { name: "UFIT Infra Socks", description: "适合脚部疲劳与久站舒适支持。" },
+        { name: "UFIT Recovery Legging", description: "适合作为下班后恢复单品。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support better standing-day recovery.",
+      explanation: "根据你选择的状态，这组产品更适合久站后的舒适支持。",
     },
-    "Long Hours Sitting": {
-      selectedSymptoms: ["Long Hours Sitting", "Lower Back Discomfort"],
+    久坐工时: {
+      selectedSymptoms: ["久坐工时", "腰部不适"],
       items: [
-        {
-          name: "UFIT Wellness Waist Belt",
-          description:
-            "Provides lower-back support during longer seated work.",
-        },
-        {
-          name: "UFIT Daily Support Tee",
-          description:
-            "Adds comfortable posture-friendly daily wear support.",
-        },
+        { name: "UFIT Wellness Waist Belt", description: "适合久坐后的腰部舒适支持。" },
+        { name: "UFIT Daily Support Tee", description: "适合作为姿势友好的轻支撑穿搭。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support desk-time comfort and posture recovery.",
+      explanation: "根据你选择的状态，这组产品更适合桌面工作和姿势支持。",
     },
-    "Muscle Recovery": {
-      selectedSymptoms: ["Muscle Recovery", "Active Lifestyle"],
+    运动恢复: {
+      selectedSymptoms: ["运动恢复", "活跃生活方式"],
       items: [
-        {
-          name: "UFIT Recovery Legging",
-          description:
-            "Supports recovery-focused comfort after light cardio or movement.",
-        },
-        {
-          name: "UFIT Daily Support Tee",
-          description:
-            "Supports everyday recovery and routine comfort.",
-        },
+        { name: "UFIT Recovery Legging", description: "适合活动后舒适恢复。" },
+        { name: "UFIT Daily Support Tee", description: "适合作为训练前后的轻支撑穿搭。" },
       ],
-      explanation:
-        "Based on your selected needs, these products may support active recovery and daily comfort.",
+      explanation: "根据你选择的状态，这组产品更适合作为活跃型恢复路线。",
     },
   },
 };
@@ -1324,87 +868,48 @@ const productMatches: Record<DemoProfile["id"], Record<Symptom, ProductMatchOutp
 const weeklyInsights: Record<DemoProfile["id"], WeeklyInsightOutput> = {
   jason: {
     stats: [
-      { label: "Sleep", value: "6.4 hrs average", progress: 64 },
-      { label: "Water Intake", value: "1.6L / day", progress: 53 },
-      { label: "Steps", value: "5200 / day", progress: 59 },
-      { label: "Mobility", value: "3 days / week", progress: 48 },
+      { label: "睡眠", value: "平均 6.4 小时", progress: 64 },
+      { label: "饮水", value: "每天 1.6L", progress: 53 },
+      { label: "步数", value: "每天 5200 步", progress: 59 },
+      { label: "活动度", value: "每周 3 天", progress: 48 },
     ],
     sections: [
-      {
-        title: "Energy Pattern",
-        body: "Energy levels drop after 4 PM, likely due to fatigue from prolonged standing.",
-      },
-      {
-        title: "Sleep Quality",
-        body: "Average sleep duration is below your optimal target.",
-      },
-      {
-        title: "Hydration",
-        body: "Daily water intake is slightly below recommended levels.",
-      },
-      {
-        title: "Activity",
-        body: "Light walking habits improved your evening recovery.",
-      },
+      { title: "精力模式", body: "下午 4 点后精力明显下降，主要与久站后的疲劳累积有关。" },
+      { title: "睡眠质量", body: "当前平均睡眠时长仍低于理想目标。" },
+      { title: "补水状态", body: "每天饮水量略低于建议值。" },
+      { title: "活动表现", body: "轻步行的习惯对晚间恢复有明显帮助。" },
     ],
-    recommendation:
-      "Next week, focus on increasing hydration, adding one extra mobility session, and maintaining evening recovery routines.",
+    recommendation: "下周建议优先提升补水量，再增加一次活动度练习，并保持晚间恢复习惯。",
   },
   sarah: {
     stats: [
-      { label: "Sleep", value: "6.8 hrs average", progress: 69 },
-      { label: "Water Intake", value: "1.9L / day", progress: 72 },
-      { label: "Steps", value: "6100 / day", progress: 66 },
-      { label: "Mobility", value: "4 days / week", progress: 61 },
+      { label: "睡眠", value: "平均 6.8 小时", progress: 69 },
+      { label: "饮水", value: "每天 1.9L", progress: 72 },
+      { label: "步数", value: "每天 6100 步", progress: 66 },
+      { label: "活动度", value: "每周 4 天", progress: 61 },
     ],
     sections: [
-      {
-        title: "Energy Pattern",
-        body: "Energy is more stable on days with post-lunch walking.",
-      },
-      {
-        title: "Sleep Quality",
-        body: "Sleep is close to target but still inconsistent across weekdays.",
-      },
-      {
-        title: "Hydration",
-        body: "Hydration is improving, but afternoon consistency can be better.",
-      },
-      {
-        title: "Activity",
-        body: "Short mobility sessions are helping lower-back comfort.",
-      },
+      { title: "精力模式", body: "有午后步行的日子，白天精力会更稳定。" },
+      { title: "睡眠质量", body: "睡眠接近目标，但工作日仍不够稳定。" },
+      { title: "补水状态", body: "补水表现比之前好，但下午时段还可以更稳定。" },
+      { title: "活动表现", body: "短时活动度练习正在帮助腰部舒适感提升。" },
     ],
-    recommendation:
-      "Next week, focus on keeping post-lunch walking consistent and adding one more desk recovery session.",
+    recommendation: "下周建议把午后步行固定下来，并多加一次桌边恢复练习。",
   },
   aina: {
     stats: [
-      { label: "Sleep", value: "6.9 hrs average", progress: 71 },
-      { label: "Water Intake", value: "2.0L / day", progress: 79 },
-      { label: "Steps", value: "7400 / day", progress: 78 },
-      { label: "Mobility", value: "5 days / week", progress: 73 },
+      { label: "睡眠", value: "平均 6.9 小时", progress: 71 },
+      { label: "饮水", value: "每天 2.0L", progress: 79 },
+      { label: "步数", value: "每天 7400 步", progress: 78 },
+      { label: "活动度", value: "每周 5 天", progress: 73 },
     ],
     sections: [
-      {
-        title: "Energy Pattern",
-        body: "Your energy stays more stable on days with light cardio.",
-      },
-      {
-        title: "Sleep Quality",
-        body: "Sleep quality improves when your night routine starts earlier.",
-      },
-      {
-        title: "Hydration",
-        body: "Hydration is strong and supports your overall recovery pattern.",
-      },
-      {
-        title: "Activity",
-        body: "Mobility sessions are helping reduce stiffness and improve recovery.",
-      },
+      { title: "精力模式", body: "做了轻有氧的日子，精力感会更平稳。" },
+      { title: "睡眠质量", body: "只要更早进入睡前节奏，睡眠表现就会更好。" },
+      { title: "补水状态", body: "补水表现整体不错，正在帮助恢复感稳定下来。" },
+      { title: "活动表现", body: "活动度练习对缓解僵硬和提升恢复很有帮助。" },
     ],
-    recommendation:
-      "Next week, focus on keeping your sleep hygiene routine consistent and preserving evening mobility sessions.",
+    recommendation: "下周建议把睡前卫生流程固定下来，并继续保留晚间活动度习惯。",
   },
 };
 
@@ -1412,25 +917,15 @@ export function getDailyPlan(profileId: DemoProfile["id"], focus: DailyFocus) {
   return dailyPlans[profileId][focus];
 }
 
-export function getMealPlan(
-  profileId: DemoProfile["id"],
-  goal: MealGoal,
-  diet: DietType,
-) {
+export function getMealPlan(profileId: DemoProfile["id"], goal: MealGoal, diet: DietType) {
   return mealPlans[profileId][goal][diet];
 }
 
-export function getWorkoutPlan(
-  profileId: DemoProfile["id"],
-  focus: WorkoutFocus,
-) {
+export function getWorkoutPlan(profileId: DemoProfile["id"], focus: WorkoutFocus) {
   return workoutPlans[profileId][focus];
 }
 
-export function getProductMatch(
-  profileId: DemoProfile["id"],
-  symptom: Symptom,
-) {
+export function getProductMatch(profileId: DemoProfile["id"], symptom: Symptom) {
   return productMatches[profileId][symptom];
 }
 

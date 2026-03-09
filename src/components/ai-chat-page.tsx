@@ -5,14 +5,14 @@ export function AiChatPage() {
   return (
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pb-24 pt-10 sm:px-8 lg:px-10">
       <SectionHeading
-        eyebrow="AI WELLNESS CHAT"
+        eyebrow="AI 健康对话"
         title="全页 AI 健康对话体验"
         description="AI 保持简短、友好、不诊断疾病，只做生活方式支持与健康产品建议。"
       />
       <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
         <div className="glass-card rounded-[2rem] p-6">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-            SAMPLE PROMPTS
+          <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+            示例问题
           </div>
           <div className="mt-5 grid gap-3">
             {[

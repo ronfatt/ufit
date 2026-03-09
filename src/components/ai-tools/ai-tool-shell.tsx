@@ -10,8 +10,8 @@ export function AIToolShell({
   triggerLabel,
   controls,
   children,
-  loadingPrimary = "AI is analyzing your wellness profile...",
-  loadingSecondary = "Generating personalized plan...",
+  loadingPrimary = "AI 正在分析你的健康画像...",
+  loadingSecondary = "正在生成个性化方案...",
 }: {
   title: string;
   subtitle: string;
@@ -36,8 +36,8 @@ export function AIToolShell({
     <div className={cn("glass-card rounded-[30px] p-6 transition duration-200 hover:-translate-y-1 hover:scale-[1.01]", accentClass)}>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
-            AI TOOL
+          <div className="text-xs font-semibold tracking-[0.22em] text-white/45">
+            AI 工具
           </div>
           <h3 className="mt-3 text-2xl font-black tracking-[-0.04em] text-white">
             {title}
@@ -54,7 +54,7 @@ export function AIToolShell({
         onClick={() => void handleGenerate()}
         className="mt-5 inline-flex rounded-full bg-[linear-gradient(135deg,#7C3AED,#00C2FF)] px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.02]"
       >
-        {loading ? "AI is generating..." : triggerLabel}
+        {loading ? "AI 正在生成中..." : triggerLabel}
       </button>
 
       {loading ? (

@@ -2,20 +2,20 @@ import { DemoProfile } from "@/data/mock-ai-tools";
 
 export function AIWellnessScoreCard({ profile }: { profile: DemoProfile }) {
   const breakdown = [
-    ["Sleep", profile.scoreBreakdown.sleep],
-    ["Activity", profile.scoreBreakdown.activity],
-    ["Nutrition", profile.scoreBreakdown.nutrition],
-    ["Recovery", profile.scoreBreakdown.recovery],
+    ["睡眠", profile.scoreBreakdown.sleep],
+    ["活动", profile.scoreBreakdown.activity],
+    ["营养", profile.scoreBreakdown.nutrition],
+    ["恢复", profile.scoreBreakdown.recovery],
   ] as const;
 
   return (
     <div className="glass-card rounded-[2rem] p-8">
-      <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-        WELLNESS SCORE
+      <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+        健康分数
       </div>
       <div className="mt-5 flex items-end gap-4">
         <div>
-          <div className="text-sm text-white/55">Overall</div>
+          <div className="text-sm text-white/55">总览</div>
           <div className="mt-2 text-5xl font-black tracking-[-0.05em] text-white">
             {profile.wellnessScore} / 100
           </div>
@@ -38,7 +38,7 @@ export function AIWellnessScoreCard({ profile }: { profile: DemoProfile }) {
         ))}
       </div>
       <div className="mt-5 rounded-[20px] border border-[#00C2FF]/16 bg-[#00C2FF]/10 px-4 py-3 text-sm text-white/82">
-        <span className="font-semibold">AI Insight</span>
+        <span className="font-semibold">AI 洞察</span>
         <div className="mt-1">{profile.scoreBreakdown.insight}</div>
       </div>
     </div>

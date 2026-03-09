@@ -50,15 +50,15 @@ export function AiChatDemo() {
     <div className="glass-card glow-border rounded-[32px] p-6 shadow-[0_0_80px_rgba(124,58,237,0.18)]">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-            AI CHAT DEMO
+          <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+            AI 对话演示
           </div>
           <h3 className="mt-2 text-3xl font-black tracking-[-0.04em] text-white">
             和 UFIT AI 聊聊
           </h3>
         </div>
         <div className="rounded-full border border-[#00C2FF]/20 bg-[#00C2FF]/10 px-3 py-1 text-xs font-semibold text-[#7fe2ff]">
-          LIVE DEMO
+          在线演示
         </div>
       </div>
 
@@ -102,14 +102,14 @@ export function AiChatDemo() {
               </div>
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/7 p-5 text-sm leading-7 text-white/78">
-              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
-                AI SUMMARY
+              <div className="mb-2 text-xs font-semibold tracking-[0.22em] text-white/40">
+                AI 概要
               </div>
               {response.summary}
             </div>
             <div className="rounded-[24px] border border-white/10 bg-white/7 p-5 text-sm leading-7 text-white/78">
-              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
-                AI ADVICE
+              <div className="mb-2 text-xs font-semibold tracking-[0.22em] text-white/40">
+                AI 建议
               </div>
               {response.advice}
             </div>

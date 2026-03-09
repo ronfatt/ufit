@@ -29,7 +29,7 @@ export function DashboardShell({
           </div>
           <div className="mt-3 text-2xl font-semibold">{title}</div>
           <p className="mt-2 text-sm leading-6 text-white/80">
-            更年轻、更像 AI lifestyle platform 的会员体验。
+            更年轻、更像 AI 生活方式平台的会员体验。
           </p>
         </div>
 
@@ -49,8 +49,8 @@ export function DashboardShell({
       <div className="min-w-0 flex-1">
         <div className="glass-card mb-6 flex flex-col gap-4 rounded-[2rem] p-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/45">
-              WELLNESS MEMBERSHIP WORKSPACE
+            <div className="text-sm font-semibold tracking-[0.2em] text-white/45">
+              健康会员工作台
             </div>
             <div className="mt-2 text-3xl font-semibold tracking-tight text-white">
               欢迎回来，Sarah Lim

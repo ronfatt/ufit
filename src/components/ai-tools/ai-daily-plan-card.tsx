@@ -9,21 +9,21 @@ import {
 import { AIToolShell } from "@/components/ai-tools/ai-tool-shell";
 
 export function AIDailyPlanCard({ profile }: { profile: DemoProfile }) {
-  const [focus, setFocus] = useState<(typeof dailyPlanOptions)[number]>("Long Standing");
+  const [focus, setFocus] = useState<(typeof dailyPlanOptions)[number]>("久站工作");
   const plan = getDailyPlan(profile.id, focus);
   const sections: Array<{ label: string; items: string[] }> = [
-    { label: "Morning Routine", items: plan.morning },
-    { label: "Midday Routine", items: plan.midday },
-    { label: "Evening Recovery", items: plan.evening },
-    { label: "Night Routine", items: plan.night },
+    { label: "晨间节奏", items: plan.morning },
+    { label: "午间安排", items: plan.midday },
+    { label: "晚间恢复", items: plan.evening },
+    { label: "夜间习惯", items: plan.night },
   ];
 
   return (
     <AIToolShell
-      title="AI Daily Wellness Plan"
-      subtitle="Personalized routine generated from your lifestyle profile."
+      title="AI 每日健康计划"
+      subtitle="根据你的生活方式画像生成个性化日常节奏。"
       accentClass="shadow-[0_0_70px_rgba(0,194,255,0.12)]"
-      triggerLabel="Generate Plan"
+      triggerLabel="生成计划"
       controls={
         <div className="flex flex-wrap gap-2">
           {dailyPlanOptions.map((option) => (
@@ -44,10 +44,10 @@ export function AIDailyPlanCard({ profile }: { profile: DemoProfile }) {
       }
     >
       <div className="space-y-4">
-        <div className="text-lg font-bold text-white">Today&apos;s AI Wellness Plan</div>
+        <div className="text-lg font-bold text-white">今日 AI 健康计划</div>
         {sections.map(({ label, items }) => (
           <div key={label}>
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#00C2FF]">
+            <div className="text-sm font-semibold tracking-[0.2em] text-[#00C2FF]">
               {label}
             </div>
             <div className="mt-2 grid gap-2">
@@ -66,7 +66,7 @@ export function AIDailyPlanCard({ profile }: { profile: DemoProfile }) {
           {plan.note}
         </div>
         <div className="text-xs text-white/45">
-          AI-generated wellness guidance for lifestyle support only.
+          AI 生成内容仅用于生活方式支持，不构成医疗建议。
         </div>
       </div>
     </AIToolShell>

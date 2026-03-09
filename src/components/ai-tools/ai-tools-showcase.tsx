@@ -34,21 +34,21 @@ export function AIToolsShowcase({
       <div className="glass-card rounded-[28px] p-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
-              DEMO PROFILE
+            <div className="text-xs font-semibold tracking-[0.22em] text-white/45">
+              演示画像
             </div>
             <div className="mt-2 text-2xl font-black tracking-[-0.04em] text-white">
               {activeProfile.name}
             </div>
             <p className="mt-2 max-w-2xl text-sm leading-7 text-white/68">
-              Age: {activeProfile.age} · Lifestyle: {activeProfile.lifestyle} · Work: {activeProfile.work}
+              年龄：{activeProfile.age} 岁 · 生活方式：{activeProfile.lifestyle} · 工作：{activeProfile.work}
               <br />
-              Main issue: {activeProfile.mainIssue} · Goal: {activeProfile.goal}
+              主要问题：{activeProfile.mainIssue} · 目标：{activeProfile.goal}
             </p>
           </div>
           <div className="rounded-[22px] border border-white/10 bg-white/6 px-5 py-4 text-center">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">
-              WELLNESS SCORE
+            <div className="text-xs font-semibold tracking-[0.2em] text-white/45">
+              健康分数
             </div>
             <div className="mt-2 text-4xl font-black tracking-[-0.05em] text-white">
               {activeProfile.wellnessScore}
