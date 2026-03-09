@@ -11,11 +11,7 @@ export default function ClosedPage() {
           当前演示暂不对外开放
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
-          这个 UFIT AI 演示站目前已进入关闭模式。如果你之后需要重新开放，只要把环境变量
-          <span className="mx-1 font-semibold text-white">DEMO_LOCKDOWN</span>
-          改成
-          <span className="mx-1 font-semibold text-white">off</span>
-          并重新部署即可。
+          这个 UFIT AI 演示站目前已进入关闭模式。如有需要请联系我们。
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
