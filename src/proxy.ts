@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 function isLockdownEnabled() {
   const value = process.env.DEMO_LOCKDOWN?.toLowerCase();
-  return value !== "off";
+  return value === "on";
 }
 
 export function proxy(request: NextRequest) {
